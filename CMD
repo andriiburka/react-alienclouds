@@ -1,0 +1,8 @@
+
+git add .
+git commit -m "Looks OK, TODO: Auth logic"
+git push origin master
+
+
+
+git remote add origin https://github.com/andriiburka/react-alienclouds.git
