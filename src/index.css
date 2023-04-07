@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "euclid_circular_a_bold";
+    src: url(../public/fonts/EuclidCircular/Euclid-Circular-A-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Euclid-Circular-A-Italic";
+    src: url(../public/fonts/EuclidCircular/Euclid-Circular-A-Italic.ttf);
+}
+
+@font-face {
+    font-family: "Euclid-Circular-A-Light";
+    src: url(../public/fonts/EuclidCircular/Euclid-Circular-A-Light.ttf);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    font-family: Euclid-Circular-A-Light, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
