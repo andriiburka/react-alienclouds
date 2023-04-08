@@ -25,6 +25,8 @@ body {
 }
 
 code {
+    color: #0fdd00;
+    user-select: text;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }

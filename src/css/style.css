@@ -174,10 +174,7 @@ span {
 
 
 /* Style the header */
-.header {
-    background-color: #f1f1f1;
-    padding: 30px;
-}
+
 
 /* Clear floats after the columns */
 .row:after {
@@ -187,47 +184,9 @@ span {
 }
 
 
-.sfprodisplay-pink-shadow {
-    font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
-    text-shadow: 4px 0 4px black;
-    line-height: 55px;
-    text-align: center;
-    color: #ff00dd;
-    /* DAY */
-    /*color: wheat;*/
-}
 
-.sfprodisplay-white-shadow {
-    font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
-    text-shadow: 4px 0 4px black;
-    line-height: 55px;
-    text-align: center;
-    color: white;
-}
 
-/* CONTACTS PAGE =============================================================*/
-.contacts-container h1 {
-    text-align: center;
-    color: cornflowerblue;
-}
 
-.contacts-container {
-    text-align: center;
-    width: auto;
-    padding-top: 20px;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-.contacts-cell {
-    /*background: rebeccapurple fixed;*/
-    float: left;
-    width: 49%;
-    padding: 1px;
-    height: 550px;
-    margin: 5px;
-    text-align: left;
-}
 
 @media (max-width: 1400px) {
     .contacts-container {

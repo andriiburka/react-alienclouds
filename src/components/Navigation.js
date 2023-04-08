@@ -26,7 +26,7 @@ function Navigation({
                         <img src={logo} alt="AlienClouds Logo"/>
                     </div>
                     <div>
-                        <h1>PROJECTS</h1>
+                        <h1></h1>
                     </div>
                     <div className="nav-buttons-box">
                         <div className="navbar-buttons">

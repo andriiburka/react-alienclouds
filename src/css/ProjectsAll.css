@@ -5,36 +5,24 @@
     position: relative;
     align-items: center;
     row-gap: 100px;
-    column-gap: 50px;
-    padding: 100px 300px;
+    column-gap: 30px;
+    margin: 100px 130px;
 }
 
 .project {
     display: block;
-    /*display: flex;*/
-    /*align-items: center;*/
-    min-width: 400px;
-    min-height: 400px;
-    max-width: 500px;
-    max-height: 550px;
-
-    /*flex-wrap: wrap;*/
+    width: 100%;
+    height: auto;
     text-align: center;
     animation: textColor 10s ease infinite;
     flex-basis: calc(33.33% - 40px); /* Subtract any margin or padding from the width */
     position: relative;
     color: #252B37;
-    /*background-color: rgba(0, 255, 119, 0.06);*/
-    width: 100%;
-    /*margin: 0 auto;*/
-
-    padding: 20px 0 20px;
+    background-color: rgba(0, 255, 119, 0.06);
+    padding: 0px 0 20px;
     box-sizing: border-box;
 }
 
-.project div h3{
-    max-width: 300px;
-}
 
 .project:after {
     position: absolute;
@@ -55,19 +43,28 @@
     background-size: 200% 200%;
     animation: animateGlow 10s ease infinite;
 }
-img {
-    max-width: 400px;
-    height: auto;
-    object-fit: cover;
+.project img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .project-text {
-    color: white;
-    text-align: center;
+    padding: 10px 20px;
+    color: whitesmoke;
+    width: 100%; /* set the width of the div */
+    word-wrap: break-word; /* allow words to break onto new lines */
+    white-space: pre-line; /* preserve newlines in the text */
 }
 
+h1{
+    font-size: 2rem; /* set the font size of the heading */
+    margin: 0; /* add some spacing below the heading */
+}
 
-
+h2, h3, h4, h5, h6 {
+    text-align: left;
+    margin: 10px 0 0 0;
+}
 
 @keyframes animateGlow {
     0% {

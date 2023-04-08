@@ -1,21 +1,18 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
+import FormField3D from "./FormField3D";
 
 function LoginRegisterForm() {
-    const [isLogin, setIsLogin] = useState(true)
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
-
-
+    const [username, setUsername] = useState('')
     const [currentForm, setCurrentForm] = useState('Login')
 
     const toggleForm = (formName) => {
         setCurrentForm(formName)
     }
 
-    const handleToggle = () => {
-        setIsLogin(!isLogin)
-    }
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -29,16 +26,21 @@ function LoginRegisterForm() {
         setName(e.target.value)
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if (isLogin) {
-            // handle login form submit
-            console.log(`Email: ${email}, Password: ${password}`)
-        } else {
-            // handle register form submit
-            console.log(`Name: ${name}, Email: ${email}, Password: ${password}`)
-        }
+
+
+
+
+    const handleUsernameChange = (event) => {
+        // Update the username state with the user's input
+        setUsername(event.target.value);
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log("Hello, " + username + "!");
+    }
+
+
 
     return (
         <div className="auth-box" style={{userSelect: "none"}}>
@@ -46,125 +48,56 @@ function LoginRegisterForm() {
             <h2>{currentForm === 'Login' ? 'Login' : 'Register'}</h2>
 
             {currentForm === 'Login' ? (
-                <div>
-                    <form onSubmit={handleSubmit} method="POST" action="src/components/LoginRegister" autoComplete='off'
-                          className='form' id="login-form">
-                        {/* USERNAME */}
+                <loginFragment>
+                    <form onSubmit={handleSubmit} method="GET" id="login-form" className="form">
                         <div className='control block-cube block-input'>
-                            <input name='username' type="text" placeholder="username"/>
-                            <div className='bg-top'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg-right'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg'>
-                                <div className='bg-inner'></div>
-                            </div>
+                            <input  type="text" id="username" name="username" value={username} onChange={handleUsernameChange} placeholder="username"/>
+                            <FormField3D/>
                         </div>
-                        {/* PASSWORD */}
-                        <div className='control block-cube block-input'>
+                        <div className="control block-cube block-input">
                             <input name='password' type="password" placeholder="password"/>
-                            <div className='bg-top'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg-right'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg'>
-                                <div className='bg-inner'></div>
-                            </div>
+                            <FormField3D/>
                         </div>
-                        {/* AUTH BUTTONS */}
                         <div className="auth-buttons-container">
-                            <a>
+                            <button type="submit">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 Login
-                            </a>
-                            <a onClick={() => toggleForm('Register')}>Register</a>
+                            </button>
+                            <button onClick={() => toggleForm('Register')}>Register</button>
                         </div>
                     </form>
-                </div>
-            ) : (
+                </loginFragment>
 
-
-
-                // REGISTER FORM
-                <div>
-                    <form onSubmit={handleSubmit} method="POST" action="auth" autoComplete='off' className='form'
-                          id="login-form">
-                        {/* FULL NAME */}
+            ) : ( // REGISTER
+                <registerFragment>
+                    <form onSubmit={handleSubmit} method="post" className='form' id="login-form">
                         <div className='control block-cube block-input'>
-                            <input name="fullname" type="text" placeholder="full name"/><>
-                            <div className='bg-top'>
-                                <div className="bg-inner"></div>
-                            </div>
-                            <div className='bg-right'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg'>
-                                <div className='bg-inner'></div>
-                            </div>
-                        </>
+                            <input name='username' type="text" placeholder="username"/>
+                            <FormField3D/>
                         </div>
-                        {/* USERNAME */}
                         <div className='control block-cube block-input'>
-                            <input name='username' type="text" placeholder="username"/><>
-                            <div className='bg-top'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg-right'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg'>
-                                <div className='bg-inner'></div>
-                            </div>
-                        </>
+                            <input name='password' type="password" placeholder="password"/>
+                            <FormField3D/>
                         </div>
-                        {/* PASSWORD */}
                         <div className='control block-cube block-input'>
-                            <input name='password' type="password" placeholder="password"/><>
-                            <div className='bg-top'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg-right'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg'>
-                                <div className='bg-inner'></div>
-                            </div>
-                        </>
-                        </div>
-                        {/* REPEAT PASSWORD */}
-                        <div className='control block-cube block-input'>
-                            <input name='password' type="password" placeholder="repeat password"/><>
-                            <div className='bg-top'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg-right'>
-                                <div className='bg-inner'></div>
-                            </div>
-                            <div className='bg'>
-                                <div className='bg-inner'></div>
-                            </div>
-                        </>
+                            <input name='repeat-password' type="password" placeholder="repeat password"/>
+                            <FormField3D/>
                         </div>
 
-                        <div className="auth-buttons-container" style={{display: "flex", position: "relative"}}>
-                            <a onClick={() => toggleForm('Login')}>Login</a>
-                            <a type="submit">
+                        <div className="auth-buttons-container">
+                            <button>Login</button>
+                            <button type="submit">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 <span></span>
-                                Register
-                            </a>
+                                Register</button>
                         </div>
                     </form>
-                </div>
+                </registerFragment>
             )}
         </div>
     );
