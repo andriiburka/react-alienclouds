@@ -10,20 +10,21 @@
 }
 
 .glow:hover {
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 .glow:hover:before{
+    border: rgba(0, 255, 179, 0.5) 1px solid;
     content: "";
     width: 104%;
-    height: 102%;
-    border-radius: 8px;
+    height: 104%;
+    border-radius: 6px;
     background-image: linear-gradient(
             var(--rotate)
             , rgba(123, 15, 255, 0), rgba(118, 0, 255, 0.12) 43%, rgba(0, 255, 179, 0.5));
     position: absolute;
     z-index: -1;
-    top: -1%;
+    top: -2%;
     left: -2%;
     animation: spin 2.5s linear infinite;
 }

@@ -32,7 +32,7 @@ function LoginRegisterForm() {
 
     const handleUsernameChange = (event) => {
         // Update the username state with the user's input
-        setUsername(event.target.value);
+        setUsername(event.target.value);    // event is from DOM
     }
 
     const handleSubmit = (event) => {
@@ -47,8 +47,7 @@ function LoginRegisterForm() {
 
             <h2>{currentForm === 'Login' ? 'Login' : 'Register'}</h2>
 
-            {currentForm === 'Login' ? (
-                <loginFragment>
+            {currentForm === 'Login' ? (<div>
                     <form onSubmit={handleSubmit} method="GET" id="login-form" className="form">
                         <div className='control block-cube block-input'>
                             <input  type="text" id="username" name="username" value={username} onChange={handleUsernameChange} placeholder="username"/>
@@ -69,10 +68,7 @@ function LoginRegisterForm() {
                             <button onClick={() => toggleForm('Register')}>Register</button>
                         </div>
                     </form>
-                </loginFragment>
-
-            ) : ( // REGISTER
-                <registerFragment>
+                </div>) : (<div>
                     <form onSubmit={handleSubmit} method="post" className='form' id="login-form">
                         <div className='control block-cube block-input'>
                             <input name='username' type="text" placeholder="username"/>
@@ -86,9 +82,8 @@ function LoginRegisterForm() {
                             <input name='repeat-password' type="password" placeholder="repeat password"/>
                             <FormField3D/>
                         </div>
-
                         <div className="auth-buttons-container">
-                            <button>Login</button>
+                            <button onClick={() => toggleForm('Login')}>Login</button>
                             <button type="submit">
                                 <span></span>
                                 <span></span>
@@ -97,7 +92,7 @@ function LoginRegisterForm() {
                                 Register</button>
                         </div>
                     </form>
-                </registerFragment>
+                </div>
             )}
         </div>
     );
