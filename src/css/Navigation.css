@@ -40,7 +40,7 @@
 /* NAVBAR */
 .nav-buttons-box {
 
-    background: rgba(0,0,0,.5);
+    /*background: rgba(0,0,0,.5);*/
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
@@ -207,23 +207,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .sticky-menu {
     z-index: 100;
 }
@@ -234,11 +217,14 @@
 
 /* NAVBAR BACKGROUND */
 .navbar {
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 35px;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    padding: 0 20px;
     background-color: rgba(0, 0, 0, 0.4);
 }
 

@@ -48,9 +48,8 @@
     max-width: 100%;
     max-height: 100%;
 }
-
 .project-text {
-    padding: 10px 20px;
+    padding: 0 20px 40px 20px;
     color: whitesmoke;
     width: 100%; /* set the width of the div */
     word-wrap: break-word; /* allow words to break onto new lines */

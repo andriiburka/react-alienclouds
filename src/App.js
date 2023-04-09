@@ -5,9 +5,11 @@ import './css/cube.css';
 import './css/footer.css';
 import './css/login-register-form.css'
 import './css/error.css'
-import './css/nav.css'
+import './css/Navigation.css'
 import './css/ProjectsAll.css'
 import './css/glow.css'
+import './css/search.css'
+import './js/search'
 // import './css/border.css'
 
 import Navigation from "./components/Navigation";

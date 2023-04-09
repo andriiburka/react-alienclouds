@@ -1,13 +1,10 @@
-import {useState} from "react";
-
-import Error from "./Error";
 import logo from '../images/logo.png'
 
 function Navigation({
                         onAuthClick,
                         onProjectClick,
                         onUploadClick
-}) {
+                    }) {
     // const [error, setError] = useState(['Error: Static Default']);
 
     // function handleRegister() {
@@ -25,11 +22,11 @@ function Navigation({
                     <div>
                         <img src={logo} alt="AlienClouds Logo"/>
                     </div>
-                    <div>
-                        <h1></h1>
-                    </div>
+
+
                     <div className="nav-buttons-box">
                         <div className="navbar-buttons">
+
                             <a onClick={onUploadClick}>Upload</a>
                             <a onClick={onProjectClick}>Projects</a>
                             <a onClick={onAuthClick}>Login</a>
@@ -47,7 +44,7 @@ function Navigation({
         </header>
 
 
-    )
+)
 }
 
 export default Navigation

@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import rasp from '../images/Raspberry.jpg'
+import image from '../images/image.png'
 
 
 function ProjectsAll() {
     const [projectImage, setProjectImage] = useState('')
 
 
-    const projects = [1, 1, 1, 1, 1, 1]
+    const projects = [1, 1, 1, 1, 1]
     return (
         <>
             {projects.length > 0 ? (
@@ -17,7 +18,7 @@ function ProjectsAll() {
 
                             <h1 className="project-text">Raspberry Pi 4B+</h1>
 
-                            <img src={rasp} alt="Image 1"/>
+                            <img src={image} alt="Image 1"/>
 
                             <h2 className="project-text">Description:</h2>
 
@@ -25,7 +26,13 @@ function ProjectsAll() {
                                 Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi
                                 culpa explicabo id ipsum numquam odit provident quam rem sunt.
                             </div>
-                            <button type="submit">BUY</button>
+
+                            <div className="auth-buttons-container">
+                                <button type="submit">BUY</button>
+                                <button type="submit">BUY</button>
+                                <button type="submit">BUY</button>
+                            </div>
+
 
                         </div>
 

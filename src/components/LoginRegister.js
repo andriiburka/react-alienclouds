@@ -3,44 +3,39 @@ import FormField3D from "./FormField3D";
 
 function LoginRegisterForm() {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [name, setName] = useState('')
-    const [username, setUsername] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
+    // const [name, setName] = useState('')
+
+    // const handleEmailChange = (e) => {
+    //     setEmail(e.target.value);
+    // }
+    // const handlePasswordChange = (e) => {
+    //     setPassword(e.target.value)
+    // }
+    // const handleNameChange = (e) => {
+    //     setName(e.target.value)
+    // }
     const [currentForm, setCurrentForm] = useState('Login')
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
 
     const toggleForm = (formName) => {
         setCurrentForm(formName)
     }
 
-
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    }
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value)
-    }
-
-    const handleNameChange = (e) => {
-        setName(e.target.value)
-    }
-
-
-
-
-
     const handleUsernameChange = (event) => {
-        // Update the username state with the user's input
-        setUsername(event.target.value);    // event is from DOM
+        setUsername(event.target.value);
+    }
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log("Hello, " + username + "!");
+        alert(`user: ${username} \npassword: ${password}`);
     }
-
-
 
     return (
         <div className="auth-box" style={{userSelect: "none"}}>
@@ -54,7 +49,7 @@ function LoginRegisterForm() {
                             <FormField3D/>
                         </div>
                         <div className="control block-cube block-input">
-                            <input name='password' type="password" placeholder="password"/>
+                            <input name='password' type="password" placeholder="password" onChange={handlePasswordChange}/>
                             <FormField3D/>
                         </div>
                         <div className="auth-buttons-container">
