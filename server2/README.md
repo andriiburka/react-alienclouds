@@ -188,7 +188,7 @@ Content:
 
 **In case of a validation error, the service will respond with an error status code and an object containing the error message**.
 
-### Error Response:
+### AuthErrors Response:
 
 ```
 {

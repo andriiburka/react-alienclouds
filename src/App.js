@@ -1,55 +1,44 @@
-import React, {useState} from "react";
+import React from "react";
+import {Route, Routes} from "react-router-dom";
 
 import './css/style.css';
-import './css/cube.css';
-import './css/footer.css';
-import './css/login-register-form.css'
-import './css/error.css'
-import './css/Navigation.css'
-import './css/ProjectsAll.css'
-import './css/glow.css'
-import './css/search.css'
-import './js/search'
-// import './css/border.css'
+import './css/effects/cube.css';
+import './css/components/Footer.css';
+import './css/components/LoginRegister.css'
+import './css/errors/error.css'
+import './css/components/Navigation.css'
+import './css/components/Projects.css'
+import './css/effects/glow.css'
+import './css/effects/infinite-glow.css'
+import './css/effects/buttons.css'
+
+
+// import './css/nope/border.css'
 
 import Navigation from "./components/Navigation";
-import UploadProject from "./components/UploadProject";
-import ProjectsAll from "./components/ProjectsAll";
-import Login from "./components/LoginRegister";
 import Footer from "./components/Footer";
+
+import UploadProject from "./components/UploadProject";
+import Projects from "./components/Projects";
+import Login from "./components/LoginRegister";
+import Err404 from "./components/partials-components/Err404";
 import ProjectDetails from "./components/ProjectDetails";
 
 
+
 function App() {
-    const [showUpload, setShowUpload] = useState(false)
-    const [showProjects, setShowProjects] = useState(true)
-    const [showLoginRegisterForm, setShowLoginRegisterForm] = useState(false)
-
-    const handleUploadProject = () => {
-        setShowUpload(true)
-        setShowProjects(false)
-        setShowLoginRegisterForm(false)
-    }
-
-    const handleAuth = () => {
-        setShowUpload(false)
-        setShowProjects(false)
-        setShowLoginRegisterForm(true)
-    }
-
-    const handleProjects = () => {
-        setShowUpload(false)
-        setShowProjects(true)
-        setShowLoginRegisterForm(false)
-    }
-
 
     return (
         <div className="App">
-            <Navigation onUploadClick={handleUploadProject} onAuthClick={handleAuth} onProjectClick={handleProjects}/>
-            {showUpload && <UploadProject/>}
-            {showProjects && <ProjectsAll/>}
-            {showLoginRegisterForm && <Login/>}
+            <Navigation/>
+            <Routes>
+                <Route path="*" element={<Err404/>}/>
+                <Route path="/" element={<Projects/>}/>
+                <Route path="/upload-project" element={<UploadProject/>}/>
+                <Route path="/projects" element={<Projects/>}/>
+                <Route path="/auth" element={<Login/>}/>
+                <Route path="/project-details" element={<ProjectDetails/>}/>
+            </Routes>
             <Footer/>
         </div>
     );

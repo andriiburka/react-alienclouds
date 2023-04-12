@@ -36,15 +36,6 @@
     color: coral;
 }
 
-.form {
-    font-size: 16px !important;
-}
-
-.form p {
-    font-family: sf_pro_display-ultralight, sans-serif;
-    font-size: 14px;
-    font-weight: bold
-}
 
 .base_title {
     padding-top: 20px;
@@ -91,11 +82,7 @@ p {
     color: whitesmoke;
 }
 
-.form .btn {
-    letter-spacing: 0.05em;
-    font-weight: bold;
-    font-size: 16px;
-}
+
 
 .register-title, .login-title {
     font-size: 2em;

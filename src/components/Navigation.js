@@ -1,50 +1,51 @@
-import logo from '../images/logo.png'
+import {NavLink} from "react-router-dom";
+import {useEffect, useState} from "react";
 
-function Navigation({
-                        onAuthClick,
-                        onProjectClick,
-                        onUploadClick
-                    }) {
-    // const [error, setError] = useState(['Error: Static Default']);
+function Navigation() {
+    const [isLogged, setIsLogged] = useState(false)
 
-    // function handleRegister() {
-    //     // handle registration logic here
-    //     // if an error occurs, add it to the errors array
-    //     setError(['Username already taken', 'Passwords do not match']);
-    // }
+    const [scrolled, setScrolled] = useState(false);
 
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    /////////////////////////////    navbar changes it's bg color when scrolling    ///////////////////////
+    const handleScroll = () => {
+        const scrollPosition = window.pageYOffset;
+        {setScrolled(scrollPosition > 0)}
+    };
+
+    const navbarStyle = {
+        backgroundColor: scrolled ? 'rgba(0,0,0,0.90)' : 'transparent',
+        position: 'fixed',
+        top: 0,
+        width: '100%',
+        transition: 'background-color 0.5s ease',
+    };/////////////////////////////////////////////////////////////////////////////////////////////////////
 
     return (
-        <header style={{userSelect: "none"}}>
-            <div className="sticky-menu" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}">
-
-                <nav className="navbar">
-                    <div>
-                        <img src={logo} alt="AlienClouds Logo"/>
+        <header className="no-copy">
+            <nav className="navbar" style={navbarStyle}>
+                <div><NavLink to="/projects" className="navbar-logo"/></div>
+                <div className="button-container">
+                    <div className="glow-purple-button">
+                        <NavLink to="/upload-project">Upload</NavLink>
                     </div>
-
-
-                    <div className="nav-buttons-box">
-                        <div className="navbar-buttons">
-
-                            <a onClick={onUploadClick}>Upload</a>
-                            <a onClick={onProjectClick}>Projects</a>
-                            <a onClick={onAuthClick}>Login</a>
-                        </div>
+                    <div className="glow-purple-button">
+                        <NavLink to="/projects">Projects</NavLink>
                     </div>
-
-
-                </nav>
-
-                <div className="error-container">
-                    {/*{error.length > 0 && <Error errors={error}/>}*/}
+                    <div className="glow-purple-button">
+                        {isLogged ? <NavLink to="/auth">Login</NavLink> :
+                            <NavLink to="/profile">Profile</NavLink>}
+                    </div>
                 </div>
-            </div>
-
+            </nav>
         </header>
-
-
-)
+    )
 }
 
 export default Navigation

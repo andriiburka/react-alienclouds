@@ -6,15 +6,6 @@
     background: rgba(255, 0, 199, .3) fixed;
 }
 
-.even-project, .odd-project {
-    width: 32.4%;
-    border: rgba(0, 0, 0, .5) 1px solid;
-    border-radius: 2px;
-    box-shadow: 5px 5px 20px black;
-    float: left;
-    height: 550px;
-    margin: 5px;
-}
 
 .allprojects_main_block {
     align-content: center

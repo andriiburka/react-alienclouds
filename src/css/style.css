@@ -19,41 +19,20 @@ header {
     width: 100%;
 }
 
-.welcome-block {
-    text-align: center;
-    padding-top: 220px;
-    color: #096dcc;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.welcome-block h2 {
-    text-shadow: 2px 2px 4px blue;
-    line-height: 55px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-}
-
-.day {
-    background: url("../images/bg.jpg") fixed;
-    background-size: 50%;
 
 
-    /*background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;*/
-    /*background: linear-gradient(40deg, indigo, indigo, black, black, indigo, indigo ) fixed;*/
-    /*background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;*/
-    /*background: linear-gradient(20deg, indigo, indigo, coral, darkslategray, indigo, indigo  ) fixed;*/
+/*.day {*/
+/*    background: url("../images/bg.jpg") fixed;*/
+/*    background-size: 50%;*/
 
-}
 
-.night {
-    /*background: linear-gradient(20deg, indigo, indigo, coral, darkslategray, indigo, indigo) fixed;*/
-    /*background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;*/
-    background: url("../images/bg.jpg") fixed;
-    background-size: 50%;
-}
+/*    !*background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;*!*/
+/*    !*background: linear-gradient(40deg, indigo, indigo, black, black, indigo, indigo ) fixed;*!*/
+/*    !*background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;*!*/
+/*    !*background: linear-gradient(20deg, indigo, indigo, coral, darkslategray, indigo, indigo  ) fixed;*!*/
+
+/*}*/
+
 
 /*body {*/
 /*    !*background: linear-gradient(20deg, indigo, indigo, coral, darkslategray, indigo, indigo) fixed;*!*/
@@ -63,15 +42,15 @@ header {
 /*}*/
 
 /* item details */
-.post-container {
-    margin: 20px 20px 0 0;
-    border: 5px solid #333;
-    overflow: auto
-}
+/*.post-container {*/
+/*    margin: 20px 20px 0 0;*/
+/*    border: 5px solid #333;*/
+/*    overflow: auto*/
+/*}*/
 
-.post-thumb {
-    float: left;
-}
+/*.post-thumb {*/
+/*    float: left;*/
+/*}*/
 
 .post-thumb img {
     display: block;
@@ -232,11 +211,7 @@ div.div-form {
     padding: 3%;
 }
 
-form {
-    width: 273px;
-    padding: 0 0;
-    margin: 0 auto;
-}
+
 
 .form .control {
     margin: 0 0 24px;

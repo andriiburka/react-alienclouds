@@ -1,11 +1,17 @@
 import React, {useRef, useState} from 'react'
-import FormField3D from "./FormField3D";
+import FormField3D from "./partials-components/FormField3D";
 
 function LoginRegisterForm() {
-
+    // const [error, setError] = useState(['AuthErrors: Static Default']);
     // const [email, setEmail] = useState('')
     // const [password, setPassword] = useState('')
     // const [name, setName] = useState('')
+
+    // function handleRegister() {
+    //     // handle registration logic here
+    //     // if an error occurs, add it to the errors array
+    //     setError(['Username already taken', 'Passwords do not match']);
+    // }
 
     // const handleEmailChange = (e) => {
     //     setEmail(e.target.value);
@@ -38,14 +44,18 @@ function LoginRegisterForm() {
     }
 
     return (
-        <div className="auth-box" style={{userSelect: "none"}}>
+        <div className="auth-box">
 
             <h2>{currentForm === 'Login' ? 'Login' : 'Register'}</h2>
-
             {currentForm === 'Login' ? (<div>
-                    <form onSubmit={handleSubmit} method="GET" id="login-form" className="form">
+
+                    <form onSubmit={handleSubmit} method="GET" className="form">
                         <div className='control block-cube block-input'>
-                            <input  type="text" id="username" name="username" value={username} onChange={handleUsernameChange} placeholder="username"/>
+                            <input  value={username}
+                                    name="username"
+                                    id="username"
+                                    placeholder="username"
+                                    onChange={handleUsernameChange}  autoComplete="no" type="text"/>
                             <FormField3D/>
                         </div>
                         <div className="control block-cube block-input">
@@ -53,7 +63,7 @@ function LoginRegisterForm() {
                             <FormField3D/>
                         </div>
                         <div className="auth-buttons-container">
-                            <button type="submit">
+                            <button type="submit" className="ripple" data-ripple-color="#89669b" >
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -63,10 +73,14 @@ function LoginRegisterForm() {
                             <button onClick={() => toggleForm('Register')}>Register</button>
                         </div>
                     </form>
+
+
                 </div>) : (<div>
-                    <form onSubmit={handleSubmit} method="post" className='form' id="login-form">
+
+
+                    <form onSubmit={handleSubmit} method="post" className='form' >
                         <div className='control block-cube block-input'>
-                            <input name='username' type="text" placeholder="username"/>
+                            <input name='username' type="text" placeholder="username" autoComplete="no"/>
                             <FormField3D/>
                         </div>
                         <div className='control block-cube block-input'>
@@ -87,6 +101,8 @@ function LoginRegisterForm() {
                                 Register</button>
                         </div>
                     </form>
+
+
                 </div>
             )}
         </div>

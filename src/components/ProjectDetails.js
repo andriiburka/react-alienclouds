@@ -1,7 +1,10 @@
-function ProjectDetails () {
+import React from 'react';
+
+
+function ProductDetailsModal() {
     return (
-        <div></div>
-    )
+        <div  className="content"><h1>Nothing yet</h1></div>
+    );
 }
 
-export default ProjectDetails
+export default ProductDetailsModal;
