@@ -2,7 +2,7 @@ import {NavLink} from "react-router-dom";
 import {useEffect, useState} from "react";
 
 function Navigation() {
-    const [isLogged, setIsLogged] = useState(false)
+    const [isLogged, setIsLogged] = useState(true)
 
     const [scrolled, setScrolled] = useState(false);
 
