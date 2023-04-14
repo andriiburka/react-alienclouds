@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import '../css/components/UploadProject.module.css'
 
-function UploadProject() {
+function Create() {
     const [projectName, setProjectName] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [imageFile, setImageFile] = useState(null);
@@ -75,4 +75,4 @@ function UploadProject() {
     )
 }
 
-export default UploadProject
+export default Create

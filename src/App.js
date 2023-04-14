@@ -18,7 +18,7 @@ import './css/effects/buttons.css'
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 
-import UploadProject from "./components/UploadProject";
+import Create from "./components/Create";
 import Projects from "./components/Projects";
 import Login from "./components/LoginRegister";
 import Err404 from "./components/partials-components/Err404";
@@ -28,13 +28,15 @@ import ProjectDetails from "./components/ProjectDetails";
 
 function App() {
 
+
+
     return (
         <div className="App">
             <Navigation/>
             <Routes>
                 <Route path="*" element={<Err404/>}/>
                 <Route path="/" element={<Projects/>}/>
-                <Route path="/upload-project" element={<UploadProject/>}/>
+                <Route path="/upload-project" element={<Create/>}/>
                 <Route path="/projects" element={<Projects/>}/>
                 <Route path="/auth" element={<Login/>}/>
                 <Route path="/project-details" element={<ProjectDetails/>}/>
