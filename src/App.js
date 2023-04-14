@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Route, Routes} from "react-router-dom";
 
 import './css/style.css';
@@ -19,15 +19,26 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 
 import Create from "./components/Create";
-import Projects from "./components/Projects";
+import Projects from "./components/all-projects/Projects";
 import Login from "./components/LoginRegister";
 import Err404 from "./components/partials-components/Err404";
 import ProjectDetails from "./components/ProjectDetails";
 
+import * as projectService from './services/projectService'
+
 
 
 function App() {
+    const [projects, setProjects] = useState([])
 
+    // get from server using projectService and requester
+    useEffect(()=>{
+        projectService.getAll()
+            .then(response => {
+                // console.log(response)
+                setProjects(response)
+            })
+    }, [])
 
 
     return (
@@ -37,7 +48,7 @@ function App() {
                 <Route path="*" element={<Err404/>}/>
                 <Route path="/" element={<Projects/>}/>
                 <Route path="/upload-project" element={<Create/>}/>
-                <Route path="/projects" element={<Projects/>}/>
+                <Route path="/projects" element={<Projects projects={projects}/>}/>
                 <Route path="/auth" element={<Login/>}/>
                 <Route path="/project-details" element={<ProjectDetails/>}/>
             </Routes>
