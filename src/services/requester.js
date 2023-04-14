@@ -1,15 +1,18 @@
-const request = async (method, url) => {
-    const response = await fetch(url, {
-        method,
-    })
+const request = async (method, url, data) => {
+    const options = {}
 
-    try {
-        return await response.json()
-    } catch (err) {
-        return {}
+    if (method !== 'GET') {
+        options.method = method
+
+        if (data) {
+            options.headers = {'content-type': 'application/json'}
+            options.body = JSON.stringify(data)
+        }
     }
-}
 
+    const response = await fetch(url, options)
+    return await response.json()
+}
 
 // PARTIAL APPLICATION
 export const get = request.bind(null,'GET')

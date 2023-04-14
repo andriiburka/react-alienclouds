@@ -1,5 +1,50 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300,300italic,600,600italic);
 
+
+.projects-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    position: relative;
+    align-items: center;
+    row-gap: 100px;
+    column-gap: 60px;
+    padding-top: 130px;
+
+
+}
+
+.no-projects-area {
+    row-gap: 100px;
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.upload-area {
+    row-gap: 100px;
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
 /* overwriting uikit.min.css:2:1111 */
 address, blockquote, dl, fieldset, figure, ol, p, pre, ul {
     margin: 0 0 0 0;

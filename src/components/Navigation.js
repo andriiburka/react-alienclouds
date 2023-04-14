@@ -1,15 +1,15 @@
-import {NavLink} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {NavLink} from "react-router-dom"
+import {useEffect, useState} from "react"
 
 function Navigation() {
     const [isLogged, setIsLogged] = useState(true)
 
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll)
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll)
         };
     }, []);
 
@@ -30,13 +30,14 @@ function Navigation() {
     return (
         <header className="no-copy">
             <nav className="navbar" style={navbarStyle}>
-                <div><NavLink to="/projects" className="navbar-logo"/></div>
+                <div><NavLink to="/404" className="navbar-logo"/></div>
+
                 <div className="button-container">
                     <div className="glow-purple-button">
                         <NavLink to="/upload-project">Upload</NavLink>
                     </div>
                     <div className="glow-purple-button">
-                        <NavLink to="/projects">Projects</NavLink>
+                        <NavLink to="/all-projects">Projects</NavLink>
                     </div>
                     <div className="glow-purple-button">
                         {isLogged ? <NavLink to="/auth">Login</NavLink> :
