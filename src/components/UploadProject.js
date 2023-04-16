@@ -7,7 +7,7 @@ function CreateProject({onCreateProjectSubmit}) {
     const [values, setValues] = useState({
         "title": "Project",
         "imageUrl": "https://www.okdo.com/wp-content/uploads/2019/06/Board_01.png",
-        "description": "Some instructables"
+        "description": "Some instructions"
     })
 
     const onChangeHandler = (e) => {
@@ -31,7 +31,7 @@ function CreateProject({onCreateProjectSubmit}) {
                                       name="description" placeholder="Description"/>
 
                             <div className="auth-buttons-container" >
-                                <button style={{bottom: 0, height: "100%"}} type="submit">Upload</button>
+                                <button className="login-button" style={{bottom: 0, height: "100%"}} type="submit">Upload</button>
                             </div>
 
                         </form>

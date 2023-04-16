@@ -30,17 +30,20 @@ function Navigation() {
     return (
         <header className="no-copy">
             <nav className="navbar" style={navbarStyle}>
-                <div><NavLink to="/404" className="navbar-logo"/></div>
+                <div><NavLink to="/" className="navbar-logo"/></div>
 
                 <div className="button-container">
+                    <div className="glow-purple-button">
+                        <NavLink to="/404">404</NavLink>
+                    </div>
                     <div className="glow-purple-button">
                         <NavLink to="/upload-project">Upload</NavLink>
                     </div>
                     <div className="glow-purple-button">
-                        <NavLink to="/all-projects">Projects</NavLink>
+                        <NavLink to="/catalog">Projects</NavLink>
                     </div>
                     <div className="glow-purple-button">
-                        {isLogged ? <NavLink to="/auth">Login</NavLink> :
+                        {isLogged ? <a href="/auth" >Login</a> :
                             <NavLink to="/profile">Profile</NavLink>}
                     </div>
                 </div>

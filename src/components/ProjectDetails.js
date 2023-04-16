@@ -1,12 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import {useParams} from "react-router-dom";
+import * as projectService from '../services/projectService'
 
 
-function ProductDetailsModal() {
+function ProjectDetails() {
+
+    const {projectId} = useParams()
+    const [project, setProject] = useState({})
+
+
+     useEffect(() => {
+         projectService.getOne(projectId)
+             .then(result => {
+                setProject(result)
+             })
+     }, [projectId, projectService])
+
+
+
     return (
-        <div  className="content">
-            <h1>Nothing yet</h1>
+        <div className="project">
+            <h1>Title: </h1>
+            <h1>Image: </h1>
         </div>
     )
 }
 
-export default ProductDetailsModal
+export default ProjectDetails
