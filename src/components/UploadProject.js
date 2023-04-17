@@ -6,7 +6,7 @@ import image from '../images/image.png'
 function CreateProject({onCreateProjectSubmit}) {
     const [values, setValues] = useState({
         "title": "Project",
-        "imageUrl": "https://www.okdo.com/wp-content/uploads/2019/06/Board_01.png",
+        "imageUrl": "https://www.okdo.com/wp-content/uploads/2019/06/Board_02.png",
         "description": "Some instructions"
     })
 

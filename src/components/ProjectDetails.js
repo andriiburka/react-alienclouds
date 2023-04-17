@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from "react-router-dom";
+
 import * as projectService from '../services/projectService'
 
 
 function ProjectDetails() {
 
     const {projectId} = useParams()
-    console.log(projectId)
+    // console.log(projectId)
 
     const [project, setProject] = useState({})
 
@@ -19,6 +20,14 @@ function ProjectDetails() {
     }, [projectId, projectService])
 
 
+
+
+
+
+
+
+
+
     return (
         <div className="projects-area">
 
@@ -29,9 +38,10 @@ function ProjectDetails() {
                      textAlign: "center",
                  }}>
 
-                <h1>Title: </h1>
-                <h1>Image: </h1>
-                <h1>Description: </h1>
+                <h1>{project.title}</h1>
+                <img src={project.imageUrl} alt=""/>
+                <h1>Description:</h1>
+                <h3>Description: {project.description}</h3>
             </div>
         </div>
     )

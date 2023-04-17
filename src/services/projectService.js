@@ -11,7 +11,10 @@ export const getAll = async () => {
 
 // FULL INFO
 export const getOne = async (projectId) => {
-    return await request.get(`${baseUrl}/${projectId}`)
+    const result = await request.get(`${baseUrl}/${projectId}`)
+    console.log(result)
+
+    return result
 }
 
 export const create = async (projectData) => {
