@@ -1,5 +1,6 @@
 import React from "react"
 import Project from "./Project";
+import NoContent204 from "./partials-components/NoProjects";
 import NoProjects from "./partials-components/NoProjects";
 
 

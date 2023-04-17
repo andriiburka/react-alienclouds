@@ -22,7 +22,6 @@ import './css/errors/error.css'
 import './css/effects/glow.css'
 import './css/style.css'
 import './css/effects/glowing-button.css'
-import './css/errors/Err404.css'
 
 
 
