@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300,300italic,600,600italic);
 
-.xxx{
+.xxx {
 
 }
 
@@ -9,16 +9,21 @@
 }
 
 .projects-area {
+    /*border: whitesmoke 1px solid;*/
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     position: relative;
-    align-items: center;
-    row-gap: 100px;
-    column-gap: 60px;
-    padding-top: 130px;
 
+    top: 100px;
+    padding: 10px 10px 10px 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*margin-bottom: 20%;*/
+
+    row-gap: 100px;
+    column-gap: 30px;
 
 }
 
@@ -70,7 +75,6 @@ header {
     display: inline-block;
     width: 100%;
 }
-
 
 
 /*.day {*/
@@ -154,51 +158,9 @@ span {
     line-height: normal;
 }
 
-.description_class {
-    vertical-align: bottom;
-    display: table-cell;
-    margin: 0 40px;
-    border-top: rgba(0, 0, 0, .1) 5px solid;
-    overflow: hidden;
-    height: 135px;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
 
-#description_id {
-    font-size: 12px;
-    padding: 15px;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: end;
-    align-self: flex-start;
-}
 
-.button-details-edit-delete {
-    text-align: center;
-    padding-bottom: 0;
-}
+
 
 
 /* PROJECT BLOCKS ====================================================================*/
@@ -213,10 +175,6 @@ span {
     display: table;
     clear: both;
 }
-
-
-
-
 
 
 @media (max-width: 1400px) {
@@ -262,7 +220,6 @@ div.div-form {
     text-align: center;
     padding: 3%;
 }
-
 
 
 .form .control {

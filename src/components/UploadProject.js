@@ -31,7 +31,7 @@ function CreateProject({onCreateProjectSubmit}) {
                                       name="description" placeholder="Description"/>
 
                             <div className="auth-buttons-container" >
-                                <button className="login-button" style={{bottom: 0, height: "100%"}} type="submit">Upload</button>
+                                <button type="submit">Upload</button>
                             </div>
 
                         </form>
@@ -39,15 +39,46 @@ function CreateProject({onCreateProjectSubmit}) {
 
                     <div className="flex-box2">
                         <div className="glow project">
-                            <h1 className="project-text">Dynamic section: SOON</h1>
-                            <img src={image} alt="Image 1"/>
-                            <h2 className="project-text">Description:</h2>
-                            <div className="project-text">Description here</div>
-                            <div className="button-container">
-                                <Link to="/project-details" className="glow-purple-button">READ MORE</Link>
+
+                            <h1 className="project-title">TODO: Dynamic title</h1>
+
+                            <img src={image} alt=""/>
+
+                            <h3 className="project-text">
+                                Description:
+                            </h3>
+
+
+                            <div className="project-description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam possimus quas soluta tenetur. Dolore neque non numquam pariatur placeat quas quis! Adipisci deserunt est modi non omnis quisquam sequi tempora.</p>
                             </div>
+
+
+                            {/*<div className="catalog-button-container">*/}
+                            {/*    <div className="glow-purple-button">*/}
+                            {/*        <NavLink className="btn" to="">Edit</NavLink>*/}
+                            {/*    </div>*/}
+                            {/*    <div className="glow-purple-button">*/}
+                            {/*        <NavLink className="btn" to="">Delete</NavLink>*/}
+                            {/*    </div>*/}
+                            {/*    <div className="glow-purple-button">*/}
+                            {/*        <NavLink className="btn" to={``}>Details</NavLink>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+
+
+
+
+
                         </div>
+
+
+
+
+
                     </div>
+
+
             </div>
         </>
     )

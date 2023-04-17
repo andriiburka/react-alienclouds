@@ -1,12 +1,32 @@
-
 .button-container {
+    /* От височината на navbar */
     height: 70%;
     display: flex;
     justify-content: center;
 }
 
-.glow-purple-button a{
-    color: white;
+.catalog-button-container {
+
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+
+    text-transform: uppercase;
+    bottom: 0; /* Поставя бутоните най-отдолу */
+    width: 100%; /* Задава ширина на бутоните, за да заемат цялата ширина на родителския елемент */
+}
+
+.glow-purple-button a {
+    color: #ffffff;
+    font-size: .8rem;
+    text-transform: uppercase;
     width: 100px;
     display: flex;
     justify-content: center;
@@ -15,7 +35,7 @@
     height: 100%;
     position: relative;
     padding: 10px 20px;
-    font-size: 16px;
+    /*font-size: 16px;*/
     text-decoration: none;
     overflow: hidden;
     transition: .5s;
@@ -23,24 +43,9 @@
 }
 
 
-.glow-purple-button a:hover{
+.glow-purple-button a:hover {
     background: white;
     color: blueviolet;
     border-radius: 3px;
     box-shadow: 0 0 5px blueviolet, 0 0 25px blueviolet, 0 0 50px blueviolet, 0 0 100px blueviolet;
 }
-
-/*.Catalog a {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    text-align: center;*/
-/*    align-items: center;*/
-/*    text-decoration: none;*/
-/*    padding: 10px 10px 10px 10px;*/
-/*    color: white;*/
-/*}*/
-
-/*a:hover {*/
-/*    background-color: white;*/
-/*    color: #7e0fff;*/
-/*}*/

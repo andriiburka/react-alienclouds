@@ -43,7 +43,7 @@ function Navigation() {
                         <NavLink to="/catalog">Projects</NavLink>
                     </div>
                     <div className="glow-purple-button">
-                        {isLogged ? <a href="/auth" >Login</a> :
+                        {isLogged ? <NavLink to="/auth">Login</NavLink> :
                             <NavLink to="/profile">Profile</NavLink>}
                     </div>
                 </div>

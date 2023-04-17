@@ -22,6 +22,7 @@ input {
 }
 
 body {
+    user-select: none;
     margin: 0;
     font-family: Euclid-Circular-A-Light, sans-serif;
     -webkit-font-smoothing: antialiased;

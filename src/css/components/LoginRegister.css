@@ -9,6 +9,8 @@ body {
 }
 
 button {
+    width:40%;
+    height: 50px;
     color: whitesmoke;
     background: transparent;
     border: none;
@@ -60,7 +62,9 @@ button {
 /*}*/
 
 .auth-box h2 {
+    /*  Раздалечава Login от формата  */
     margin: 0 0 50px;
+
     padding: 0;
     color: #fff;
     text-align: center;
@@ -70,37 +74,39 @@ button {
     position: relative;
 }
 
-.auth-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-}
-.auth-box .user-box label {
-    position: absolute;
-    top:0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
-}
+/*.auth-box .user-box input {*/
+/*    width: 100%;*/
+/*    padding: 10px 0;*/
+/*    font-size: 16px;*/
+/*    color: #fff;*/
+/*    margin-bottom: 50px;*/
+/*    border: none;*/
+/*    border-bottom: 1px solid #fff;*/
+/*    outline: none;*/
+/*    background: transparent;*/
+/*}*/
 
-.auth-box .user-box input:focus ~ label,
-.auth-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: darkslateblue;
-    font-size: 12px;
-}
+/*.auth-box .user-box label {*/
+/*    position: absolute;*/
+/*    top:0;*/
+/*    left: 0;*/
+/*    padding: 10px 0;*/
+/*    font-size: 16px;*/
+/*    color: #fff;*/
+/*    pointer-events: none;*/
+/*    transition: .5s;*/
+/*}*/
+
+/*.auth-box .user-box input:focus ~ label,*/
+/*.auth-box .user-box input:valid ~ label {*/
+/*    top: -20px;*/
+/*    left: 0;*/
+/*    color: darkslateblue;*/
+/*    font-size: 12px;*/
+/*}*/
 
 .auth-box form button {
+    width: 100%;
     position: relative;
     display: inline-block;
     padding: 10px 20px;
