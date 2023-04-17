@@ -22,12 +22,11 @@ import './css/errors/error.css'
 import './css/effects/glow.css'
 import './css/style.css'
 import './css/effects/glowing-button.css'
-import WelcomePage from "./components/partials-components/WelcomePage"
 
 
 
 function App() {
-    const [projects, setProjects] = useState([])
+    const [catalog, setCatalog] = useState([])
     const redirectTo = useNavigate()
 
 
@@ -35,7 +34,7 @@ function App() {
     // get from server using projectService and requester
     useEffect(() => {
         projectService.getAll().then(response => {
-            setProjects(response)
+            setCatalog(response)
         })
     }, [])
 
@@ -43,7 +42,7 @@ function App() {
 
     const onCreateProjectSubmit = async (data) => {
         const newProject = await projectService.create(data)
-        setProjects(state => [...state, newProject])
+        setCatalog(state => [...state, newProject])
 
         redirectTo('/catalog')
     }
@@ -55,9 +54,9 @@ function App() {
             <Navigation/>
             <Routes>
                 <Route path="*" element={<Err404/>}/>
-                <Route path="/" element={ <WelcomePage catalog={projects}/>  }/>
+                <Route path="/" element={ <Catalog catalog={catalog}/>  }/>
                 <Route path="/upload-project" element={<Create onCreateProjectSubmit={onCreateProjectSubmit}/>}/>
-                <Route path="/catalog" element={<Catalog catalog={projects}/>}/>
+                <Route path="/catalog" element={<Catalog catalog={catalog}/>}/>
                 <Route path="/catalog/:projectId" element={<ProjectDetails/>}/>
                 <Route path="/auth" element={<Login/>}/>
             </Routes>
