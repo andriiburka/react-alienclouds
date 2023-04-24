@@ -23,6 +23,7 @@ import './css/effects/glow.css'
 import './css/style.css'
 import './css/effects/glowing-button.css'
 import './css/effects/background.css'
+import './css/login.css'
 
 
 function App() {
