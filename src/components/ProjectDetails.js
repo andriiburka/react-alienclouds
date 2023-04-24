@@ -26,23 +26,19 @@ function ProjectDetails() {
                 <div className="flex-box2">
                     <div className="glow project" style={{display: "flex",justifyContent: "center", alignItems: "center"}}>
                         <img src={project.imageUrl} alt=""/>
-                        {/*<div className="button-container">*/}
-                        {/*    <Link to="" className="glow-purple-button">EXPAND</Link>*/}
-                        {/*</div>*/}
+
                         <div className="catalog-button-container glow-purple-button">
                             <Link className="btn" to={``}>Edit</Link>
                             <Link className="btn" to={``}>Delete</Link>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
 
 
                 <div className="flex-box1" style={{background: "rgba(200,200,300, .1)", textAlign: "center"}}>
 
                     <h1>{project.title}</h1>
-
-                    <h1>Description:</h1>
                     <p style={{textAlign: "justify", padding: "0 20px 20px 20px",}}>Description: {project.description}</p>
 
 

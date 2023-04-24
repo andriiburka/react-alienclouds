@@ -41,13 +41,13 @@ function LoginRegisterForm() {
     }
 
     return (
-        <div className="auth-box" style={{userSelect: "none"}}>
+        <div className="auth-box no-copy" >
 
             <h2>{currentForm === 'Login' ? 'Login' : 'Register'}</h2>
 
             {currentForm === 'Login' ? (
                 <div>
-                    <form onSubmit={handleSubmit} method="POST" action="LoginRegister" autoComplete='off'
+                    <form onSubmit={handleSubmit} method="POST" action="LoginRegister" autoComplete='off'className
                           className='form' id="login-form">
                         {/* USERNAME */}
                         <div className='control block-cube block-input'>

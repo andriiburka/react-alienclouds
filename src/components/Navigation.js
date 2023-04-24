@@ -3,15 +3,13 @@ import {useEffect, useState} from "react"
 
 function Navigation() {
     const [isLogged, setIsLogged] = useState(true)
-
     const [scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        };
-    }, []);
+        return () => {window.removeEventListener('scroll', handleScroll)}}, [])
+
+
 
     /////////////////////////////    navbar changes it's bg color when scrolling    ///////////////////////
     const handleScroll = () => {
@@ -27,20 +25,20 @@ function Navigation() {
         transition: 'background-color 0.5s ease',
     };/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
     return (
         <header className="no-copy">
             <nav className="navbar" style={navbarStyle}>
                 <div><NavLink to="/" className="navbar-logo"/></div>
 
                 <div className="button-container">
+
                     <div className="glow-purple-button">
-                        <NavLink to="/404">404</NavLink>
+                        <NavLink to="/upload-project">Add</NavLink>
                     </div>
                     <div className="glow-purple-button">
-                        <NavLink to="/upload-project">Upload</NavLink>
-                    </div>
-                    <div className="glow-purple-button">
-                        <NavLink to="/catalog">Projects</NavLink>
+                        <NavLink to="/catalog">Project</NavLink>
                     </div>
                     <div className="glow-purple-button">
                         {isLogged ? <NavLink to="/auth">Login</NavLink> :

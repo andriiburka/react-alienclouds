@@ -22,7 +22,7 @@ import './css/errors/error.css'
 import './css/effects/glow.css'
 import './css/style.css'
 import './css/effects/glowing-button.css'
-
+import './css/effects/background.css'
 
 
 function App() {
@@ -30,14 +30,13 @@ function App() {
     const redirectTo = useNavigate()
 
 
-
     // get from server using projectService and requester
     useEffect(() => {
-        projectService.getAll().then(response => {
-            setCatalog(response)
-        })
+        projectService.getAll()
+            .then(response => {
+                setCatalog(response)
+            })
     }, [])
-
 
 
     const onCreateProjectSubmit = async (data) => {
@@ -48,22 +47,29 @@ function App() {
     }
 
 
-
     return (
         <div className="App">
+
+                    <div id='stars'></div>
+                    <div id='stars2'></div>
+                    <div id='stars3'></div>
+
+
+
             <Navigation/>
             <Routes>
+
                 <Route path="*" element={<Err404/>}/>
-                <Route path="/" element={ <Catalog catalog={catalog}/>  }/>
+                <Route path="/" element={<Catalog catalog={catalog}/>}/>
                 <Route path="/upload-project" element={<Create onCreateProjectSubmit={onCreateProjectSubmit}/>}/>
                 <Route path="/catalog" element={<Catalog catalog={catalog}/>}/>
                 <Route path="/catalog/:projectId" element={<ProjectDetails/>}/>
                 <Route path="/auth" element={<Login/>}/>
             </Routes>
             <Footer/>
-        </div>)
+        </div>
+)
 }
-
 
 
 export default App

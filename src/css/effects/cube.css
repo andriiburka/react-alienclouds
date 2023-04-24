@@ -1,23 +1,15 @@
-#cube {
-    margin: auto;
-}
+
 
 .cube {
     width: 120px;
     height: 120px;
-    perspective: 200px;
-    perspective-origin: 40% 30px;
+    perspective: 480px;
+    perspective-origin: 50% 30px;
 }
 .cube.purple .cube__side {
     background-color: rgba(173, 120, 220, 0.8);
     box-shadow: #ad78dc 0px 0px 100px 15px;
 }
-
-.cube.magenta .cube__side {
-    background-color: rgba(115, 0, 255, 0.8);
-    box-shadow: #00ff90 0px 0px 100px 5px;
-}
-
 .cube.red .cube__side {
     background-color: rgba(221, 0, 49, 0.8);
     box-shadow: #dd0031 0px 0px 100px 15px;
@@ -40,8 +32,8 @@
     height: 100%;
     transform: translate(0, 0);
     transform-style: preserve-3d;
-    -webkit-animation: spin 7s infinite linear;
-    animation: spin 7s infinite linear;
+    -webkit-animation: spin 60s infinite linear;
+    animation: spin 60s infinite linear;
     cursor: pointer;
 }
 .cube__side {

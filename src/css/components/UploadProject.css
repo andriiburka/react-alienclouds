@@ -1,10 +1,33 @@
 .upload-project-form input[type="text"], textarea {
+    font-family: monospace;
+
     background-color: rgba(3, 236, 244, 0.08);
     border: 1px rgba(138, 43, 226, 0.73) solid;
     color: whitesmoke;
     width: 100%;
-    padding: 2rem;
+    padding: 20px 20px 20px 20px;
 
+}
+
+/*textarea {*/
+/*    height: 300px;*/
+/*}*/
+
+.create-project-textarea-container {
+    font-family: monospace;
+    border-radius: 5px;
+    width: 100%;
+    height: 400px;
+    border: 1px rgba(138, 43, 226, 0.73) solid;
+    overflow: hidden; /* скрива текста, който надхвърля размерите на контейнера */
+}  .text-area {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    resize: none;
+    overflow: auto; /* добавя скролбарове, когато текста надхвърля размерите на textarea */
+    box-sizing: border-box;
 }
 
 .upload-project-form input::placeholder, textarea::placeholder {
@@ -28,16 +51,28 @@
     margin-top: 0.5rem;
 }
 
-.upload-project-form textarea {
+.flex-box1.upload-project-form textarea {
+    display: list-item;
     font-size: 1.1rem;
     font-family: Euclid-Circular-A-Light, sans-serif;
-    height: 200px;
+    height: 100%;
     max-width: 100%;
 }
 
-.flex-box1, .flex-box2 {
-    width: 40%;
+.flex-box1 {
+    width: 55%;
 }
+
+.flex-box2 {
+    width: 30%
+}
+
+/*.flex-box1, .flex-box2 {*/
+/*    padding: 20px;*/
+/*    border: rgba(115, 0, 255, 0.43) 1px solid;*/
+/*    border-radius: 5px;*/
+
+/*}*/
 
 .flex-box1 form {
     top: 0;
@@ -52,7 +87,6 @@
 
 .upload-project-form > form {
     border: 1px springgreen solid;
-;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

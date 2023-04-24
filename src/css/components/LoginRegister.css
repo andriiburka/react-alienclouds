@@ -4,8 +4,8 @@ html {
 body {
     margin:0;
     padding:0;
-    background: url("../../images/bg.jpg") fixed;
-    background-size: 50%;
+    /*background: url("../../images/bg.jpg") fixed;*/
+    /*background-size: 50%;*/
 }
 
 button {
@@ -26,6 +26,7 @@ button {
     box-sizing: border-box;
     border-radius: 10px;
 }
+
 
 /* CENTERING FORM BUTTONS*/
 .auth-buttons-container {
