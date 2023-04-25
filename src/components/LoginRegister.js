@@ -43,7 +43,7 @@ function LoginRegisterForm() {
                                placeholder="Password"
                                required="required" type="password"/>
 
-                        <button type="submit" className="btn btn-primary btn-block btn-large">Let me in.</button>
+                        <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
                     </form>
                 </div>)
                 :
@@ -64,7 +64,7 @@ function LoginRegisterForm() {
                                    placeholder="Password"
                                    required="required" type="password"/>
 
-                            <button type="submit" className="btn btn-primary btn-block btn-large">Let me in.</button>
+                            <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
                         </form>
 
                     </div>
