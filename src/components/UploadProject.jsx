@@ -26,7 +26,8 @@ function CreateProject({onCreateProjectSubmit}) {
     }
 
     return (<>
-            <div className="upload-area auth-box">
+            {/*<div className="projects-area ">*/}
+            <div className="upload-area">
                 <div className="flex-box1">
                     <form onSubmit={onSubmit} className="upload-project-form no-copy">
                         <input value={values.title} onChange={onChangeHandler}
@@ -66,8 +67,14 @@ function CreateProject({onCreateProjectSubmit}) {
                             </p>
                         </div>
 
+                        {/*<div className="infinite-glow catalog-button-container">*/}
+                        {/*    <button onClick={uploadClicked}>UPLOAD</button>*/}
+                        {/*</div>*/}
+
                         <div className="catalog-button-container">
-                            <button onClick={uploadClicked}>UPLOAD</button>
+                            <div className="glow-purple-button">
+                                <NavLink onClick={uploadClicked} className="btn" to="">Upload</NavLink>
+                            </div>
                         </div>
 
 

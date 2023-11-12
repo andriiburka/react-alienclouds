@@ -60,19 +60,12 @@
 }
 
 .flex-box1 {
-    width: 55%;
+    width: 30%;
 }
 
 .flex-box2 {
     width: 30%
 }
-
-/*.flex-box1, .flex-box2 {*/
-/*    padding: 20px;*/
-/*    border: rgba(115, 0, 255, 0.43) 1px solid;*/
-/*    border-radius: 5px;*/
-
-/*}*/
 
 .flex-box1 form {
     top: 0;
@@ -98,4 +91,27 @@
 
 .upload-project-form button {
     font-size: 1rem;
+}
+
+
+.upload-area {
+    border: whitesmoke 1px solid;
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+
+    padding: 20px 0 100px 0;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+
+    /*top: 100px;*/
+    left: 50%;
+    column-gap: 40px;
+
 }

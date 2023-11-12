@@ -4,6 +4,7 @@ function LoginRegisterForm() {
     const [currentForm, setCurrentForm] = useState('Login')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [changeText, setChangeText] = useState('')
 
     const toggleForm = (formName) => {
         setCurrentForm(formName)
@@ -22,33 +23,20 @@ function LoginRegisterForm() {
     }
 
     return (
-        <div className="auth-box">
-            <h2 className="login-title">
-                {currentForm === 'Login' ?
-                    <a className="icon-3d" onClick={() => toggleForm('Register')}>Login</a> :
-                    <a className="icon-3d" onClick={() => toggleForm('Login')}>Register</a>
-                }
-            </h2>
+        <>
+            <div className="login-container auth-box">
+            {/*<div className="auth-box">*/}
 
-            {currentForm === 'Login' ? (<div>
-                    <form onSubmit={handleSubmit} method="post" className='form' >
 
-                        <input value={username}
-                               name="username"
-                               placeholder="Username"
-                               required="required" type="text"/>
-
-                        <input onChange={handlePasswordChange}
-                               name="password"
-                               placeholder="Password"
-                               required="required" type="password"/>
-
-                        <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
-                    </form>
-                </div>)
-                :
-                (<div>
+                {currentForm === 'Login' ? (
+                    <div>
                         <form onSubmit={handleSubmit} method="post" className='form'>
+                            <h2 className="login-title">
+                                {currentForm === 'Login' ?
+                                    <a className="login-3d change-text-to-register" onClick={() => toggleForm('Register')}>Login</a> :
+                                    <a className="login-3d change-text-to-login" onClick={() => toggleForm('Login')}>Register</a>
+                                }
+                            </h2>
                             <input value={username}
                                    name="username"
                                    placeholder="Username"
@@ -59,17 +47,46 @@ function LoginRegisterForm() {
                                    placeholder="Password"
                                    required="required" type="password"/>
 
-                            <input onChange={handlePasswordChange}
-                                   name="repeat-password"
-                                   placeholder="Password"
-                                   required="required" type="password"/>
-
                             <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
                         </form>
+                    </div>)
+                    :
+                    (<div>
 
-                    </div>
-                )}
-        </div>
+                            <form onSubmit={handleSubmit} method="post" className='form'>
+                                <h2 className="login-title">
+                                    {currentForm === 'Login' ?
+
+                                        <a className="login-3d change-text-to-register"
+                                           onClick={() => toggleForm('Register')}>Login</a> :
+                                        <a className="login-3d change-text-to-login" onClick={() => toggleForm('Login')}>Register</a>
+                                    }
+                                </h2>
+                                <input value={username}
+                                       name="username"
+                                       placeholder="Username"
+                                       required="required" type="text"/>
+
+                                <input onChange={handlePasswordChange}
+                                       name="password"
+                                       placeholder="Password"
+                                       required="required" type="password"/>
+
+                                <input onChange={handlePasswordChange}
+                                       name="repeat-password"
+                                       placeholder="Password"
+                                       required="required" type="password"/>
+
+
+                                <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
+
+                            </form>
+
+                        </div>
+                    )}
+            </div>
+        </>
+
     )
 }
 

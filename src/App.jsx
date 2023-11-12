@@ -24,6 +24,9 @@ import './css/style.css'
 import './css/effects/glowing-button.css'
 import './css/effects/background.css'
 import './css/login.css'
+import './index.css';
+import './css/components/auth.css'
+
 
 
 function App() {
