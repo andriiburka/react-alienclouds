@@ -23,24 +23,24 @@
     color: #fff;
 }
 .icon-3d:hover {
-    -webkit-animation: icon3d 200ms infinite;
-    animation: icon3d 200ms infinite;
+    -webkit-animation: icon3d 300ms infinite;
+    animation: icon3d 300ms infinite;
 }
 
 @keyframes icon3d {
     0% {
-        text-shadow: 5px 4px #f44336, -5px -6px #2196f3;
+        text-shadow: 3px 2px #f44336, -3px -3px #2196f3;
     }
     25% {
-        text-shadow: -5px -6px #f44336, 5px 4px #2196f3;
+        text-shadow: -3px -3px #f44336, 3px 2px #2196f3;
     }
     50% {
-        text-shadow: 5px -4px #f44336, -8px 4px #2196f3;
+        text-shadow: 3px -2px #f44336, -4px 2px #2196f3;
     }
     75% {
-        text-shadow: -8px -4px #f44336, -5px -4px #2196f3;
+        text-shadow: -4px -2px #f44336, -3px -2px #2196f3;
     }
     100% {
-        text-shadow: -5px 0 #f44336, 5px -4px #2196f3;
+        text-shadow: -3px 0 #f44336, 3px -2px #2196f3;
     }
 }
