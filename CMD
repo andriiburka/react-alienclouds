@@ -1,6 +1,6 @@
 
 git add .
-git commit -m "Looks OK, TODO: Auth logic"
+git commit -m "Updated from CRA to VITE"
 git push origin master
 
 
