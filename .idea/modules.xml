@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Softuni.iml" filepath="$PROJECT_DIR$/.idea/Softuni.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-alienclouds.iml" filepath="$PROJECT_DIR$/.idea/react-alienclouds.iml" />
     </modules>
   </component>
 </project>

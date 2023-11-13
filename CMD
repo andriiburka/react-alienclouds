@@ -1,6 +1,6 @@
 
 git add .
-git commit -m "Updated from CRA to VITE"
+git commit -m "CSS optimization"
 git push origin master
 
 

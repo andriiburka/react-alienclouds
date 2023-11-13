@@ -95,23 +95,26 @@
 
 
 .upload-area {
-    border: whitesmoke 1px solid;
+    /*border: whitesmoke 1px solid;*/
 
-    width: 100%;
+    position: fixed;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    position: absolute;
 
-    padding: 20px 0 100px 0;
+    width: 100%;
+    padding: 100px 0 100px 0;
+    border-radius: 10px;
+    left: 50%;
+    column-gap: 40px;
+
+
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
 
-    /*top: 100px;*/
-    left: 50%;
-    column-gap: 40px;
+
+
 
 }

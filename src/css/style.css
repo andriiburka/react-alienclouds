@@ -16,33 +16,22 @@ header {
 }
 
 
-.projects-area {
-    /*border: whitesmoke 1px solid;*/
 
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: absolute;
-    top: 100px;
-    row-gap: 100px;
-    column-gap: 30px;
-}
 
-.no-projects-area {
-    /*row-gap: 100px;*/
-    /*gap: 50px;*/
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    border-radius: 10px;
-}
+/*.no-projects-area {*/
+/*    !*row-gap: 100px;*!*/
+/*    !*gap: 50px;*!*/
+/*    !*display: flex;*!*/
+/*    !*flex-wrap: wrap;*!*/
+/*    justify-content: center;*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    !*width: 80%;*!*/
+/*    transform: translate(-50%, -50%);*/
+/*    box-sizing: border-box;*/
+/*    border-radius: 10px;*/
+/*}*/
 
 
 
