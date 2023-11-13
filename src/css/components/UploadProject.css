@@ -59,11 +59,18 @@
     max-width: 100%;
 }
 
+/*  TEXT  */
 .flex-box1 {
-    width: 30%;
+    width:45%;
 }
 
+/*  IMAGE  */
 .flex-box2 {
+    width: 45%
+}
+
+/*  PREVIEW  */
+.flex-box3{
     width: 30%
 }
 
@@ -106,7 +113,8 @@
     padding: 100px 0 100px 0;
     border-radius: 10px;
     left: 50%;
-    column-gap: 40px;
+    column-gap: 20px;
+    row-gap: 10px;
 
 
     transform: translate(-50%, -50%);

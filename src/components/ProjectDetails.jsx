@@ -22,7 +22,8 @@ function ProjectDetails() {
 
     return (<>
 
-            <div className="projects-area">
+            {/*<div className="projects-area">*/}
+            <div className="upload-area">
                 <div className="flex-box2">
                     <div className="glow project" style={{display: "flex",justifyContent: "center", alignItems: "center"}}>
                         <img src={project.imageUrl} alt=""/>

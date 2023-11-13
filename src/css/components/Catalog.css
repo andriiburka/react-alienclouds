@@ -13,6 +13,8 @@
 /*}*/
 
 
+
+/*  PROJECT DETAILS  */
 .projects-area {
     /*border: whitesmoke 1px solid;*/
     padding: 40px 0 100px 0;
@@ -23,7 +25,7 @@
     position: absolute;
     top: 100px;
     row-gap: 100px;
-    column-gap: 30px;
+    column-gap: 20px;
 }
 
 .project {
@@ -60,7 +62,7 @@
     color: white;
     white-space: nowrap;
     overflow: hidden; /* Скрива излишния текст */
-    max-width: 400px;
+    /*max-width: 400px;*/
     align-items: center;
     text-align: center;
     padding: 20px 10px;

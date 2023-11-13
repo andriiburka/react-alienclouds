@@ -5,16 +5,20 @@ function Navigation() {
     const [isLogged, setIsLogged] = useState(true)
     const [scrolled, setScrolled] = useState(false)
 
+
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
-        return () => {window.removeEventListener('scroll', handleScroll)}}, [])
-
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
 
     /////////////////////////////    navbar changes it's bg color when scrolling    ///////////////////////
     const handleScroll = () => {
         const scrollPosition = window.pageYOffset;
-        {setScrolled(scrollPosition > 0)}
+        setScrolled(scrollPosition > 0)
     };
 
     const navbarStyle = {
@@ -24,7 +28,6 @@ function Navigation() {
         width: '100%',
         transition: 'background-color 0.5s ease',
     };/////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
     return (

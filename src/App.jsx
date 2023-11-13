@@ -28,7 +28,6 @@ import './index.css';
 import './css/components/auth.css'
 
 
-
 function App() {
     const [catalog, setCatalog] = useState([])
     const redirectTo = useNavigate()
@@ -45,7 +44,7 @@ function App() {
 
     const onCreateProjectSubmit = async (data) => {
         const newProject = await projectService.create(data)
-        setCatalog(state => [...state, newProject])
+        setCatalog(oldProjects => [...oldProjects, newProject])
 
         redirectTo('/catalog')
     }
@@ -54,15 +53,14 @@ function App() {
     return (
         <div className="App">
 
-                    <div id='stars'></div>
-                    <div id='stars2'></div>
-                    <div id='stars3'></div>
-
-
+            {/* SPACE STARS */}
+            <div id='stars'></div>
+            <div id='stars2'></div>
+            <div id='stars3'></div>
 
             <Navigation/>
-            <Routes>
 
+            <Routes>
                 <Route path="*" element={<Err404/>}/>
                 <Route path="/" element={<Catalog catalog={catalog}/>}/>
                 <Route path="/upload-project" element={<Create onCreateProjectSubmit={onCreateProjectSubmit}/>}/>
@@ -70,9 +68,10 @@ function App() {
                 <Route path="/catalog/:projectId" element={<ProjectDetails/>}/>
                 <Route path="/auth" element={<Login/>}/>
             </Routes>
+
             <Footer/>
         </div>
-)
+    )
 }
 
 
