@@ -1,6 +1,6 @@
 
 git add .
-git commit -m "CSS optimization"
+git commit -m "CSS + Readme"
 git push origin master
 
 
