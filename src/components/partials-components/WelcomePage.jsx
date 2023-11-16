@@ -1,6 +1,6 @@
 import React from "react"
 
-import Catalog from "../Catalog";
+import Catalog from "../catalog/Catalog";
 function WelcomePage({catalog}) {
     return (
         <>

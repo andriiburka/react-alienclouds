@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import '../css/components/UploadProject.css'
+import './UploadProject.css'
 import {Link, NavLink} from "react-router-dom"
 
 

@@ -1,5 +1,5 @@
 import React from "react"
-import Project from "./Project";
+import Project from "./project-shown-in-catalog/Project";
 import {NavLink} from "react-router-dom";
 
 

@@ -1,4 +1,4 @@
-import * as projectService from "./services/projectService"
+import * as projectService from "./services/projectAPI"
 import {Route, Routes, useNavigate} from "react-router-dom"
 import React, {useEffect, useState} from "react"
 
@@ -6,16 +6,16 @@ import Err404 from "./components/partials-components/Err404"
 import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
 
-import Create from "./components/UploadProject"
-import Catalog from "./components/Catalog"
-import ProjectDetails from "./components/ProjectDetails"
-import Login from "./components/LoginRegister"
+import Create from "./components/add/UploadProject"
+import Catalog from "./components/catalog/Catalog"
+import ProjectDetails from "./components/catalog/project-shown-in-catalog/project-details/ProjectDetails"
+import Login from "./components/auth/LoginRegister"
 
-import './css/components/LoginRegister.css'
+import './components/auth/LoginRegister.css'
 import './css/effects/infinite-glow.css'
-import './css/components/Navigation.css'
-import './css/components/Catalog.css'
-import './css/components/Footer.css'
+import './components/Navigation.css'
+import './components/catalog/Catalog.css'
+import './components/Footer.css'
 import './css/effects/buttons.css'
 import './css/effects/cube.css'
 import './css/errors/error.css'
@@ -23,9 +23,7 @@ import './css/effects/glow.css'
 import './css/style.css'
 import './css/effects/glowing-button.css'
 import './css/effects/background.css'
-import './css/login.css'
 import './index.css';
-import './css/components/auth.css'
 
 
 function App() {
@@ -52,11 +50,13 @@ function App() {
 
     return (
         <div className="App">
-
-            {/* SPACE STARS */}
-            <div id='stars'></div>
-            <div id='stars2'></div>
-            <div id='stars3'></div>
+            <div
+                style={{display: 'none'}}
+            >
+                <div id='stars'></div>
+                <div id='stars2'></div>
+                <div id='stars3'></div>
+            </div>
 
             <Navigation/>
 

@@ -5,6 +5,7 @@
 }
 
 body, html {
+    /*background-color: darkgray;*/
     height: 100%;
     margin: 0;
 }
@@ -181,6 +182,7 @@ body {
 .form {
     display: block;
     align-items: center;
+    /*color: black;*/
 }
 
 .form .control {
@@ -339,7 +341,6 @@ body {
 }
 
 .footer {
-
     position: fixed;
     left: 0;
     bottom: 0;
