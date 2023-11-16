@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
+import {logDOM} from "@testing-library/react";
 
 function LoginRegisterForm() {
     const [currentForm, setCurrentForm] = useState('Register')
 
-    const [userList, setUserList] = useState(['admin'])
-    const [isUsernameValid, setIsUsernameValid] = useState(false)
-    const [username, setUsername] = useState('')
+    const [userList, setUserList] = useState(['admin@abv.bg'])
+    const [showemailValidation, setShowemailValidation] = useState(false)
+    const [email, setemail] = useState('')
     const [password, setPassword] = useState('')
 
     const toggleForm = (formName) => {
@@ -16,20 +17,25 @@ function LoginRegisterForm() {
         e.preventDefault()
         // BASIC=================================================
         let formData = new FormData(e.currentTarget)
-        let {username, password} = Object.fromEntries(formData)
-        alert(`${username} ${password}`)
+        let {email, password} = Object.fromEntries(formData)
+        alert(`${email} ${password}`)
         //=======================================================
     }
 
-    const onUsernameBlur = (e) => {
-        let username = e.target.value
-        const isUserInList = userList.includes(username) // BOOLEAN
+    const onEmailBlur = (e) => {
+        let email = e.target.value
+        const isUserInList = userList.includes(email) // BOOLEAN
         isUserInList ? toggleForm('Login') : toggleForm('Register')
     }
 
-    const onUsernameChange = (e) => {
-        let username = e.target.value
-        username.length > 3 ? setIsUsernameValid(true):setIsUsernameValid(false)
+    const onEmailChange = (e) => {
+        let emailLen = e.target.value.length
+        emailLen > 0 &&
+        emailLen > 3 ? setShowemailValidation(true) : setShowemailValidation(false)
+
+        let email = e.target.value
+        const isUserInList = userList.includes(email) // BOOLEAN
+        isUserInList ? toggleForm('Login') : toggleForm('Register')
     }
 
     return (
@@ -50,24 +56,31 @@ function LoginRegisterForm() {
                                     <a className="login-3d change-text-to-login"
                                        onClick={() => toggleForm('Login')}>Register</a>}
                             </h2>
+                            {/*{setShowemailValidation &&*/}
+                            {/*email.length > 3 ?*/}
+                            {/*    <span style={{color: "whitesmoke"}}><small>VALID</small></span>*/}
+                            {/*    :*/}
+                            {/*    <span style={{color: "darkviolet"}}><small>NOT VALID</small></span>*/}
 
-                            {   // checks if username length is less than 4 letters
-                                isUsernameValid ? <span style={{color: "green"}}><small>VALID</small></span> :
-                                    <span style={{color: "red"}}><small>NOT VALID</small></span>
-                            }
+
+                            {/*}*/}
+
+
+                            {/*<span style={{color: "red"}}><small>NOT VALID</small></span>*/}
                             <input
-                                id="reg-username"
-                                name="username"
-                                placeholder="Username"
+                                id="email"
+                                name="email"
+                                placeholder="e-mail"
+                                // defaultValue="@abv.bg"
                                 required="required"
                                 type="text"
-                                onBlur={onUsernameBlur}
-                                onChange={onUsernameChange}
+                                // onBlur={onEmailBlur}
+                                onChange={onEmailChange}
                             />
 
                             <input
                                 name="password"
-                                placeholder="Password"
+                                placeholder="password"
                                 required="required"
                                 type="password"
 
@@ -75,8 +88,10 @@ function LoginRegisterForm() {
 
                             <input
                                 name="repeat-password"
-                                placeholder="Password"
-                                required="required" type="password"/>
+                                placeholder="repeat-password"
+                                required="required"
+                                type="password"
+                            />
 
 
                             <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
@@ -87,11 +102,12 @@ function LoginRegisterForm() {
                     </>
                     :
                     <>
+                        
+                        {/*  LOGIN  */}
 
                         <form method="POST"
                             // onSubmit={submitHandler}
                         >
-
                             <h2 className="login-title">
                                 {currentForm === 'Login' ?
                                     <a className="login-3d change-text-to-register"
@@ -105,20 +121,19 @@ function LoginRegisterForm() {
                                 }</h2>
 
 
-
-                            {   // checks if username length is less than 4 letters
-                                isUsernameValid ? <span style={{color: "green"}}><small>VALID</small></span> :
-                                    <span style={{color: "red"}}><small>NOT VALID</small></span>
-                            }
+                            {/*{   // checks if email length is less than 4 letters*/}
+                            {/*    isemailValid ? <span style={{color: "green"}}><small>VALID</small></span> :*/}
+                            {/*        <span style={{color: "red"}}><small>NOT VALID</small></span>*/}
+                            {/*}*/}
                             <input
-                                id="log-username"
+                                id="email"
                                 type="text"
-                                id="login-username-input"
-                                name="username"
-                                placeholder="Username"
+                                name="email"
+                                placeholder="e-mail"
+                                // defaultValue="@abv.bg"
                                 required="required"
-                                onBlur={onUsernameBlur}
-                                onChange={onUsernameChange}
+                                // onBlur={onEmailBlur}
+                                onChange={onEmailChange}
                             />
 
 
@@ -126,7 +141,7 @@ function LoginRegisterForm() {
                                 type="password"
                                 id="login-password-input"
                                 name="password"
-                                placeholder="Password"
+                                placeholder="password"
                                 required="required"
                             />
                             <button className="btn btn-primary btn-block btn-large">Continue</button>

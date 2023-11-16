@@ -1,6 +1,6 @@
 
 git add .
-git commit -m "CSS + Readme"
+git commit -m "Toggle auth form by checking username + basic username len validate"
 git push origin master
 
 
