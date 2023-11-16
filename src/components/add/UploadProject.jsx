@@ -11,12 +11,6 @@ function CreateProject({onCreateProjectSubmit}) {
         "_id": "814d2b29-7af7-449a-8e1c-80e0912d249d"
     })
 
-    const onChangeHandler = (e) => {
-        setProjectData(state => ({
-            ...state,
-            [e.target.name]: e.target.value
-        }))
-    }
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -26,6 +20,7 @@ function CreateProject({onCreateProjectSubmit}) {
     const uploadClicked = (e) => {
         e.preventDefault()
         onCreateProjectSubmit(projectData)
+
     }
 
     return (<>
@@ -49,17 +44,19 @@ function CreateProject({onCreateProjectSubmit}) {
 
                 <div className="flex-box1">
                     <form onSubmit={onSubmit} className="upload-project-form no-copy">
-                        <input value={projectData.title} onChange={onChangeHandler}
-                               type="text"
-                               id="title"
-                               name="title"
-                               placeholder="Title"/><br/><br/>
+                        <input
+                            defaultValue={projectData.title}
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="Title"/><br/><br/>
 
-                        <input value={projectData.imageUrl} onChange={onChangeHandler}
-                               type="text"
-                               id="imageUrl"
-                               name="imageUrl"
-                               placeholder="Image URL"/><br/><br/>
+                        <input
+                            defaultValue={projectData.imageUrl}
+                            type="text"
+                            id="imageUrl"
+                            name="imageUrl"
+                            placeholder="Image URL"/><br/><br/>
 
                         <div className="create-project-textarea-container">
                             <textarea
@@ -67,13 +64,11 @@ function CreateProject({onCreateProjectSubmit}) {
                                 name="description"
                                 className="text-area"
                                 placeholder="Description"
-                                value={projectData.description}
-                                onChange={onChangeHandler}
+                                defaultValue={projectData.description}
                             />
                         </div>
                     </form>
                 </div>
-
 
 
             </div>

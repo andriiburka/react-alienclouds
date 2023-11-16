@@ -1,6 +1,6 @@
-import { createContext, useContext } from 'react';
+import {createContext, useContext} from 'react';
 
-import useLocalStorage from '../../../route-my-pets-main/route-my-pets-main/src/hooks/useLocalStorage';
+import useLocalStorage from '../hooks/useLocalStorage'
 
 const initialAuthState = {
     _id: '',
@@ -29,7 +29,5 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuthContext = () => {
-    const authState = useContext(AuthContext);
-
-    return authState;
+    return useContext(AuthContext);
 }

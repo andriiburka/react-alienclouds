@@ -1,4 +1,5 @@
-import * as request from "./lib/request";
+import * as request from "./lib/request.js"
+// import * as request from "./lib/requester.js"
 
 const baseUrl = 'http://localhost:3030/jsonstore/catalog'
 
@@ -11,8 +12,6 @@ export const getAll = async () => {
 // FULL INFO
 export const getOne = async (projectId) => {
     const result = await request.get(`${baseUrl}/${projectId}`)
-    console.log(result)
-
     return result
 }
 

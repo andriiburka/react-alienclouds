@@ -3,11 +3,14 @@ import Project from "./project-shown-in-catalog/Project";
 import {NavLink} from "react-router-dom";
 
 
-function Catalog({catalog}) {
+function Catalog({
+                     catalog
+                 }) {
 
 
     return (
         <div>
+
             {catalog && catalog.length > 0 ?
                 <div className="projects-area">
                     {catalog.map((project) =>
@@ -26,6 +29,7 @@ function Catalog({catalog}) {
                 </div>
             }
         </div>
+
     )
 }
 
