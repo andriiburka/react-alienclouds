@@ -29,6 +29,7 @@ import './css/style.css'
 import './css/effects/glowing-button.css'
 import './css/effects/background.css'
 import './index.css';
+import Error from "./components/partials-components/Error";
 
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
                         </div>
 
                         <Navigation/>
+                        <Error />
 
                         <Notification />
 
