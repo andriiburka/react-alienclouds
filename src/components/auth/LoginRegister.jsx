@@ -8,7 +8,7 @@ import Navigation from "../Navigation";
 
 function LoginRegisterForm() {
     const [currentForm, setCurrentForm] = useState('Register')
-    const userList = ['george@abv.bg', 'admin@abv.bg', 'peter@abv.bg']
+    const userList = ['george@abv.bg', 'john@abv.bg']
 
     const toggleForm = (formName) => {
         setCurrentForm(formName)

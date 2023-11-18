@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Link, useParams} from "react-router-dom";
+import {Link, NavLink, useParams} from "react-router-dom";
 
 import * as projectService from '../../../../services/projectAPI'
 
@@ -20,34 +20,23 @@ function ProjectDetails() {
     }, [projectId, projectService])
 
 
-    return (<>
-
-            {/*<div className="projects-area">*/}
-            <div className="upload-area">
+    return (
+            <div className="add-and-details-flexbox">
                 <div className="flex-box2">
-                    <div className="glow project" style={{display: "flex",justifyContent: "center", alignItems: "center"}}>
+                    <div className="glow project-add-image-preview">
                         <img src={project.imageUrl} alt=""/>
-
-                        <div className="catalog-button-container glow-purple-button">
-                            <Link className="btn" to={``}>Edit</Link>
-                            <Link className="btn" to={``}>Delete</Link>
-                        </div>
-
+                                <div className="catalog-button-container glow-purple-button">
+                                    <Link className="btn" to={``}>Edit</Link>
+                                    <Link className="btn" to={``}>Delete</Link>
+                                </div>
                     </div>
                 </div>
 
-
                 <div className="flex-box1" style={{background: "rgba(200,200,300, .1)", textAlign: "center"}}>
-
                     <h1>{project.title}</h1>
                     <p style={{textAlign: "justify", padding: "0 20px 20px 20px",}}>Description: {project.description}</p>
-
-
                 </div>
-
-
             </div>
-        </>
     )
 }
 

@@ -1,17 +1,11 @@
 .upload-project-form input[type="text"], textarea {
     font-family: monospace;
-
     background-color: rgba(3, 236, 244, 0.08);
     border: 1px rgba(138, 43, 226, 0.73) solid;
     color: whitesmoke;
     width: 100%;
     padding: 20px 20px 20px 20px;
-
 }
-
-/*textarea {*/
-/*    height: 300px;*/
-/*}*/
 
 .create-project-textarea-container {
     font-family: monospace;
@@ -65,9 +59,32 @@
 }
 
 /*  IMAGE  */
+
 .flex-box2 {
-    width: 45%
+    width: 45%;
 }
+/*.flex-box2 img {*/
+/*    width: 100%;*/
+/*}*/
+
+/*.project-upload-image-preview {*/
+/*    !*display: block;*!*/
+/*    box-sizing: border-box;*/
+/*    background-color: rgba(3, 208, 244, 0.04);*/
+/*    position: relative;*/
+/*    !*min-height: 600px;*!*/
+/*    !*max-height: 600px;*!*/
+/*    width: 400px;*/
+/*    height: 600px;*/
+/*    !*flex-basis: calc(25% - 0px);*!*/
+/*    border-radius: 4px;*/
+/*    padding: 0 0 20px;*/
+/*    animation: textColor 10s ease infinite;*/
+/*    border: 1px rgba(226, 43, 168, 0.1) solid;*/
+/*}*/
+
+
+
 
 /*  PREVIEW  */
 .flex-box3{
