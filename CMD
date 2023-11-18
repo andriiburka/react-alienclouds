@@ -1,6 +1,6 @@
 
 git add .
-git commit -m "Toggle auth form by checking username + basic username len validate"
+git commit -m "Add Project works, added default image, add form works"
 git push origin master
 
 

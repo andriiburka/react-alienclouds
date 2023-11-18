@@ -7,7 +7,11 @@ function Project({_id, title, imageUrl, description}) {   // from catalog {...x}
 
             <h1 className="project-title">{title}</h1>
 
-            <img src={imageUrl} alt=""/>
+            <NavLink to={`/catalog/${_id}`}>
+                <a href="">
+                    <img src={imageUrl} alt=""/>
+                </a>
+            </NavLink>
 
             <h3 className="project-text">
                 Description:

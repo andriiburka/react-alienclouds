@@ -1,11 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 html {
     height: 100%;
 }
 body {
     margin:0;
     padding:0;
-    /*background: url("../../images/bg.jpg") fixed;*/
-    /*background-size: 50%;*/
 }
 
 button {
@@ -15,18 +15,6 @@ button {
     background: transparent;
     border: none;
 }
-
-/*.auth-box {*/
-/*    position: absolute;*/
-/*    top: 60%;*/
-/*    left: 50%;*/
-/*    !*width: 500px;*!*/
-/*    !*padding: 80px;*!*/
-/*    transform: translate(-50%, -50%);*/
-/*    box-sizing: border-box;*/
-/*    border-radius: 10px;*/
-/*}*/
-
 
 /* CENTERING FORM BUTTONS*/
 .auth-buttons-container {
@@ -45,22 +33,8 @@ button {
     transition: .5s;
     letter-spacing: 2px;
 }
-
-
 /* END */
 
-
-/*!* BASE OF LOGIN FORM *!*/
-/*.auth-box .nav-buttons {*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    left: 50%;*/
-/*    width: 400px;*/
-/*    padding: 40px;*/
-/*    transform: translate(-50%, -50%);*/
-/*    box-sizing: border-box;*/
-/*    border-radius: 10px;*/
-/*}*/
 
 .auth-box h2 {
     /*  Раздалечава Login от формата  */
@@ -75,46 +49,14 @@ button {
     position: relative;
 }
 
-/*.auth-box .user-box input {*/
-/*    width: 100%;*/
-/*    padding: 10px 0;*/
-/*    font-size: 16px;*/
-/*    color: #fff;*/
-/*    margin-bottom: 50px;*/
-/*    border: none;*/
-/*    border-bottom: 1px solid #fff;*/
-/*    outline: none;*/
-/*    background: transparent;*/
-/*}*/
-
-/*.auth-box .user-box label {*/
-/*    position: absolute;*/
-/*    top:0;*/
-/*    left: 0;*/
-/*    padding: 10px 0;*/
-/*    font-size: 16px;*/
-/*    color: #fff;*/
-/*    pointer-events: none;*/
-/*    transition: .5s;*/
-/*}*/
-
-/*.auth-box .user-box input:focus ~ label,*/
-/*.auth-box .user-box input:valid ~ label {*/
-/*    top: -20px;*/
-/*    left: 0;*/
-/*    color: darkslateblue;*/
-/*    font-size: 12px;*/
-/*}*/
 
 .auth-box form button {
     width: 100%;
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-
     font-size: 16px;
     text-decoration: none;
-
     overflow: hidden;
     transition: .5s;
     margin-top: 20px;
@@ -132,12 +74,6 @@ button {
     position: absolute;
     display: block;
 }
-
-
-
-
-
-
 
 /* LOGIN BUTTON TOP ANIMATED SIDE  */
 .auth-box button span:nth-child(1) {
@@ -214,47 +150,6 @@ button {
         bottom: 100%;
     }
 }
-
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-/*.btn {*/
-/*    display: inline-block;*/
-/*    *display: inline;*/
-/*    *zoom: 1;*/
-/*    padding: 4px 10px 4px;*/
-/*    margin-bottom: 0;*/
-/*    font-size: 13px;*/
-/*    line-height: 18px;*/
-/*    color: #333333;*/
-/*    text-align: center;*/
-/*    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);*/
-/*    vertical-align: middle;*/
-/*    background-color: #f5f5f5;*/
-/*    !*background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);*!*/
-/*    !*background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);*!*/
-/*    !*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));*!*/
-/*    !*background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);*!*/
-/*    !*background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);*!*/
-/*    !*background-image: linear-gradient(top, #ffffff, #e6e6e6);*!*/
-/*    !*background-repeat: repeat-x;*!*/
-/*    !*filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0);*!*/
-/*    !*border-color: #e6e6e6 #e6e6e6 #e6e6e6;*!*/
-/*    !*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*!*/
-/*    border: 1px solid #e6e6e6;*/
-/*    -webkit-border-radius: 4px;*/
-/*    -moz-border-radius: 4px;*/
-/*    border-radius: 4px;*/
-/*    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);*/
-/*    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);*/
-/*    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);*/
-/*    cursor: pointer;*/
-/*    *margin-left: .3em;*/
-/*}*/
-
-/*.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {*/
-/*    background-color: #e6e6e6;*/
-/*}*/
 
 .btn-large {
     padding: 9px 14px;
@@ -392,6 +287,7 @@ body {
 }
 
 .login-container input {
+    text-align: center;
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;

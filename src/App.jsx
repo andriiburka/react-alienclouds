@@ -4,21 +4,19 @@ import React, {useEffect, useState} from "react"
 
 import {AuthProvider} from './contexts/AuthContext'
 import {NotificationProvider} from './contexts/NotificationContext'
+
 import Notification from './components/partials-components/Notification/Notification';
 import ErrorBoundary from './components/partials-components/ErrorBoundary';
-
-
 import Err404 from "./components/partials-components/Err404"
 import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
-
-import Create from "./components/add/UploadProject"
+import Create from "./components/add/AddProject"
 import Catalog from "./components/catalog/Catalog"
 import ProjectDetails from "./components/catalog/project-shown-in-catalog/project-details/ProjectDetails"
+
 import Login from "./components/auth/LoginRegister"
-
-
 import './components/auth/LoginRegister.css'
+
 import './css/effects/infinite-glow.css'
 import './components/Navigation.css'
 import './components/catalog/Catalog.css'
@@ -66,7 +64,7 @@ function App() {
                 <NotificationProvider>
                     <div className="App">
                         <div
-                            style={{display: 'none'}}
+                            // style={{display: 'none'}}
                         >
                             <div id='stars'></div>
                             <div id='stars2'></div>

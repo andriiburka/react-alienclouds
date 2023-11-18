@@ -5,7 +5,7 @@ html {
     background: black;
 
     /*background: url("../../images/bg.jpg") fixed;*/
-    /*background-size: 50%;*/
+    background-size: 50%;
     overflow: scroll;
 }
 
