@@ -5,12 +5,8 @@ import * as projectService from '../../../../services/projectAPI'
 
 
 function ProjectDetails() {
-
     const {projectId} = useParams()
-    console.log(projectId)
-
     const [project, setProject] = useState({})
-
 
     useEffect(() => {
         projectService.getOne(projectId)
