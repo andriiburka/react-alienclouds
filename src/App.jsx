@@ -73,7 +73,7 @@ function App() {
                         </div>
 
                         <Navigation/>
-                        <Error />
+
 
                         <Notification />
 

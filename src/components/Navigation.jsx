@@ -1,5 +1,6 @@
 import {NavLink} from "react-router-dom"
-import {useEffect, useState} from "react"
+import React, {useEffect, useState} from "react"
+import Error from "./partials-components/Error";
 
 function Navigation() {
     const [isLogged, setIsLogged] = useState(true)
@@ -32,6 +33,7 @@ function Navigation() {
 
     return (
         <header className="no-copy">
+
             <nav className="navbar" style={navbarStyle}>
                 <div><NavLink to="/" className="navbar-logo"/></div>
 
