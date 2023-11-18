@@ -1,6 +1,6 @@
 
 git add .
-git commit -m "Fixed some CSS conflicts"
+git commit -m "Catalog > Project > Image redirects to details"
 git push origin master
 
 
