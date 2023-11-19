@@ -97,11 +97,20 @@ function LoginRegisterForm() {
                             />
 
                             <input
+                                type="password"
                                 name="password"
+                                id="password"
                                 placeholder="password"
                                 required="required"
-                                type="password"
 
+                            />
+
+                            <input
+                                type="password"
+                                name="confirm-pass"
+                                id="repeat-pass"
+                                placeholder="repeat password"
+                                required="required"
                             />
 
 

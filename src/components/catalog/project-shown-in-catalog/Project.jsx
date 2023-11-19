@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
 
-function Project({_id, title, imageUrl, description}) {   // from catalog {...x}
+function Project({_id, title, imageUrl, description}) {   // from catalog {...projects}
 
     return (
         <div className="glow project">
@@ -8,9 +8,7 @@ function Project({_id, title, imageUrl, description}) {   // from catalog {...x}
             <h1 className="project-title">{title}</h1>
 
             <NavLink to={`/catalog/${_id}`}>
-                <a href="">
                     <img src={imageUrl} alt=""/>
-                </a>
             </NavLink>
 
             <h3 className="project-text">

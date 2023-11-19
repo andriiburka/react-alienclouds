@@ -1,15 +1,18 @@
 import {NavLink} from "react-router-dom"
 import React, {useState} from "react"
 
-import noImage from '../../images/no-image-2.png'
+import noImage from '../../images/noImage.png'
 import './AddProject.css'
 
 
 function CreateProject({onCreateProjectSubmit}) {
+
+
     const [projectData, setProjectData] = useState(
         {
             "title": "Raspberry Pi 4",
-            "imageUrl": noImage,
+            // "imageUrl": noImage ,
+            "imageUrl": "https://www.okdo.com/wp-content/uploads/2019/06/Board_02.png",
             "description": "Raspberry Pi developed in the United Kingdom by the Raspberry Pi Foundation",
             "_id": "814d2b29-7af7-449a-8e1c-80e0912d249d"
         }
@@ -36,7 +39,7 @@ function CreateProject({onCreateProjectSubmit}) {
         <div className="add-and-details-flexbox">
             <div className="flex-box2">
                 <div className="glow project-add-image-preview">
-                    <img src={projectData.imageUrl} alt=""/>
+                    <img src={projectData.imageUrl ? projectData.imageUrl : noImage} alt=""/>
                     <div className="catalog-button-container">
                         <div className="glow-purple-button">
                             <NavLink onClick={uploadClicked} className="btn" to="">Add</NavLink>
