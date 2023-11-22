@@ -19,9 +19,9 @@ const Notification = () => {
                 {notification.message}
 
             </Toast.Header>
-            {/*<Toast.Body>*/}
-            {/*    {notification.message}*/}
-            {/*</Toast.Body>*/}
+            <Toast.Body>
+                {notification.message}
+            </Toast.Body>
         </Toast>
     );
 };

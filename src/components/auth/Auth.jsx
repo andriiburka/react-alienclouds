@@ -7,15 +7,19 @@ import * as authService from '../../services/authService'
 import {Navbar} from "react-bootstrap";
 import Navigation from "../partials-components/Navigation";
 
-function LoginRegisterForm({
-                               loginSubmitHandler,
-                           }) {
+
+const LoginFormKeys = {
+    EMAIL: 'email',
+    PASSWORD: 'password',
+}
+
+function LoginRegisterForm({loginSubmitHandler,}) {
 
     // Hooks
     const [currentForm, setCurrentForm] = useState('Register')
     const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
-        email: '',
-        password: '',
+        [LoginFormKeys.EMAIL]: '',
+        [LoginFormKeys.PASSWORD]: '',
     })
 
     const {login} = useAuthContext()
@@ -100,9 +104,10 @@ function LoginRegisterForm({
                         <input
                             id="email"
                             name="email"
-                            defaultValue="@abv.bg"
-                            required="required"
                             type="text"
+                            placeholder="e-mail"
+                            // defaultValue="@abv.bg"
+                            required="required"
                             autoComplete="email"
                             // onChange={onEmailChange}
                         />
@@ -159,14 +164,14 @@ function LoginRegisterForm({
                         <input
                             id="email"
                             type="text"
-                            name="email"
-                            // placeholder="e-mail"
-                            defaultValue="@abv.bg"
+                            name={LoginFormKeys.EMAIL}
+                            placeholder="e-mail"
+                            // defaultValue="@abv.bg"
                             required="required"
                             autoComplete="email"
                             // onBlur={onEmailChange}
                             onChange={onChange}
-                            value={values.email}
+                            value={values[LoginFormKeys.EMAIL]}
 
 
                         />
@@ -175,11 +180,11 @@ function LoginRegisterForm({
                         <input
                             type="password"
                             id="login-password-input"
-                            name="password"
+                            name={LoginFormKeys.PASSWORD}
                             placeholder="password"
                             required="required"
                             onChange={onChange}
-                            value={values.password}
+                            value={values[LoginFormKeys.PASSWORD]}
 
                         />
                         <button className="btn btn-primary btn-block btn-large">Continue</button>

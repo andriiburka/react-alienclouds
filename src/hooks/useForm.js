@@ -9,7 +9,6 @@ export default function useForm(submitHandler, initialValues) {  //submitHandler
             ...state,
             [e.target.name]: e.target.value  // name="email" from form
         }))
-
     }
 
     const onSubmit = (e) => {
@@ -17,10 +16,5 @@ export default function useForm(submitHandler, initialValues) {  //submitHandler
         submitHandler(values)
     }
 
-
-    return {
-        values,
-        onChange,
-        onSubmit
-    }
+    return {values, onChange, onSubmit}
 }
