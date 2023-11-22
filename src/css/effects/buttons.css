@@ -18,16 +18,16 @@
 
 .btn {
 
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     bottom: 0; /* Поставя бутоните най-отдолу */
-    width: 100%; /* Задава ширина на бутоните, за да заемат цялата ширина на родителския елемент */
+    /*width: 100%; !* Задава ширина на бутоните, за да заемат цялата ширина на родителския елемент *!*/
 }
 
 .glow-purple-button a {
     color: #ffffff;
     font-size: .8rem;
-    text-transform: uppercase;
-    width: 100px;
+    /*text-transform: uppercase;*/
+    /*width: 100px;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
     text-decoration: none;
     overflow: hidden;
     transition: .5s;
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
 }
 
 

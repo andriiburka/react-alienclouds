@@ -3,8 +3,9 @@ import {useNavigate} from 'react-router-dom'
 import {useAuthContext} from '../../contexts/AuthContext'
 import {useNotificationContext, types} from '../../contexts/NotificationContext'
 import * as authService from '../../services/authService'
+import useForm from '../../hooks/useForm'
 import {Navbar} from "react-bootstrap";
-import Navigation from "../Navigation";
+import Navigation from "../partials-components/Navigation";
 
 function LoginRegisterForm() {
     const [currentForm, setCurrentForm] = useState('Register')
@@ -58,9 +59,8 @@ function LoginRegisterForm() {
 
 
     return (
-        <>
-            <div className="login-container auth-box">
-                {currentForm === 'Register' ? <>{/*
+        <div className="login-container auth-box">
+            {currentForm === 'Register' ? <>{/*
 
 /\\\\\\\\\       /\\\\\\\\\\\\\\\    /\\\\\\\\\\\\   /\\\\\\\\\\\     /\\\\\\\\\\\    /\\\\\\\\\\\\\\\  /\\\\\\\\\\\\\\\   /\\\\\\\\\
 /\\\///////\\\   \/\\\///////////   /\\\//////////   \/////\\\///    /\\\/////////\\\ \///////\\\/////  \/\\\///////////   /\\\///////\\\
@@ -72,56 +72,55 @@ function LoginRegisterForm() {
      \/\\\      \//\\\ \/\\\\\\\\\\\\\\\ \//\\\\\\\\\\\\/   /\\\\\\\\\\\_\///\\\\\\\\\\\/         \/\\\       \/\\\\\\\\\\\\\\\ \/\\\      \//\\\
       \///        \///  \///////////////   \////////////    \///////////   \///////////            \///        \///////////////  \///        \///*/}
 
-                        <form
-                            method="POST"
-                            onSubmit={registerSubmitHandler}
-                        >
+                    <form method="POST"
+                          onSubmit={registerSubmitHandler}
+                    >
 
-                            <h2 className="auth-title">
-                                {currentForm === 'Login' ?
-                                    <a className="login-3d change-text-to-register"
-                                       onClick={() => toggleForm('Register')}>Login</a>
-                                    :
-                                    <a className="login-3d change-text-to-login"
-                                       onClick={() => toggleForm('Login')}>Register</a>}
-                            </h2>
+                        <h2 className="auth-title">
+                            {currentForm === 'Login' ?
+                                <a className="login-3d change-text-to-register"
+                                   onClick={() => toggleForm('Register')}>Login</a>
+                                :
+                                <a className="login-3d change-text-to-login"
+                                   onClick={() => toggleForm('Login')}>Register</a>}
+                        </h2>
 
-                            <input
-                                id="email"
-                                name="email"
-                                defaultValue="@abv.bg"
-                                required="required"
-                                type="text"
-                                autoComplete="email"
-                                onChange={onEmailChange}
-                            />
+                        <input
+                            id="email"
+                            name="email"
+                            defaultValue="@abv.bg"
+                            required="required"
+                            type="text"
+                            autoComplete="email"
+                            onChange={onEmailChange}
+                        />
 
-                            <input
-                                type="password"
-                                name="password"
-                                id="password"
-                                placeholder="password"
-                                required="required"
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="password"
+                            required="required"
 
-                            />
+                        />
 
-                            <input
-                                type="password"
-                                name="confirm-pass"
-                                id="repeat-pass"
-                                placeholder="repeat password"
-                                required="required"
-                            />
-
-
-                            <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
-
-                        </form>
+                        <input
+                            type="password"
+                            name="confirm-pass"
+                            id="repeat-pass"
+                            placeholder="repeat password"
+                            required="required"
+                        />
 
 
-                    </>
-                    :
-                    <>{/*
+                        <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
+
+                    </form>
+
+
+                </>
+                :
+                <>{/*
 
   /\\\                  /\\\\\           /\\\\\\\\\\\\  /\\\\\\\\\\\  /\\\\\     /\\\
   \/\\\                 /\\\///\\\      /\\\//////////  \/////\\\///  \/\\\\\\   \/\\\
@@ -133,50 +132,42 @@ function LoginRegisterForm() {
         \/\\\\\\\\\\\\\\\    \///\\\\\/     \//\\\\\\\\\\\\/   /\\\\\\\\\\\ \/\\\   \//\\\\\
          \///////////////       \/////        \////////////    \///////////  \///     \/////      */}
 
-                        <form method="POST"
-                              onSubmit={loginSubmitHandler}
-                        >
-                            <h2 className="login-title">
-                                {currentForm === 'Login' ?
-                                    <a className="login-3d change-text-to-register"
-                                       onClick={() => toggleForm('Register')}>
-                                        Login
-                                    </a>
-                                    :
-                                    <a className="login-3d change-text-to-login" onClick={() => toggleForm('Login')}>
-                                        Register
-                                    </a>
-                                }</h2>
+                    <form method="POST"
+                          onSubmit={loginSubmitHandler}
+                    >
+                        <h2 className="login-title">
+                            {currentForm === 'Login'
+                                ? <a className="login-3d change-text-to-register"
+                                     onClick={() => toggleForm('Register')}>Login</a>
+                                : <a className="login-3d change-text-to-login"
+                                     onClick={() => toggleForm('Login')}>Register</a>
+                            }</h2>
 
-                            <input
-                                id="email"
-                                type="text"
-                                name="email"
-                                // placeholder="e-mail"
-                                defaultValue="@abv.bg"
-                                required="required"
-                                autoComplete="email"
-                                onBlur={onEmailChange}
-                            />
+                        <input
+                            id="email"
+                            type="text"
+                            name="email"
+                            // placeholder="e-mail"
+                            defaultValue="@abv.bg"
+                            required="required"
+                            autoComplete="email"
+                            onBlur={onEmailChange}
+                        />
 
 
-                            <input
-                                type="password"
-                                id="login-password-input"
-                                name="password"
-                                placeholder="password"
-                                required="required"
-                            />
-                            <button className="btn btn-primary btn-block btn-large">Continue</button>
+                        <input
+                            type="password"
+                            id="login-password-input"
+                            name="password"
+                            placeholder="password"
+                            required="required"
+                        />
+                        <button className="btn btn-primary btn-block btn-large">Continue</button>
 
-                        </form>
-
-
-                    </>
-                }
-            </div>
-        </>
-
+                    </form>
+                </>
+            }
+        </div>
     )
 }
 

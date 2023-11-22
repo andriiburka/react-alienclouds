@@ -33,15 +33,14 @@
     box-sizing: border-box;
     background-color: rgba(3, 208, 244, 0.04);
     position: relative;
-    /*min-height: 600px;*/
-    /*max-height: 600px;*/
     width: 400px;
     height: 600px;
     /*flex-basis: calc(25% - 0px);*/
     border-radius: 4px;
     padding: 0 0 20px;
     animation: textColor 10s ease infinite;
-    border: 1px rgba(226, 43, 168, 0.1) solid;
+    border: 1px rgba(226, 43, 168, .5) solid;
+    /*border: 1px rgba(208, 0, 255, .4) solid;*/
 }
 
 .product-details-image img {

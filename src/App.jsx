@@ -8,8 +8,8 @@ import {NotificationProvider} from './contexts/NotificationContext'
 import Notification from './components/partials-components/Notification/Notification';
 import ErrorBoundary from './components/partials-components/ErrorBoundary';
 import Err404 from "./components/partials-components/Err404"
-import Navigation from "./components/Navigation"
-import Footer from "./components/Footer"
+import Navigation from "./components/partials-components/Navigation"
+import Footer from "./components/partials-components/Footer"
 import Create from "./components/add/AddProject"
 import Catalog from "./components/catalog/Catalog"
 import ProjectDetails from "./components/catalog/project-shown-in-catalog/project-details/ProjectDetails"
@@ -18,9 +18,9 @@ import Login from "./components/auth/LoginRegister"
 import './components/auth/LoginRegister.css'
 
 import './css/effects/infinite-glow.css'
-import './components/Navigation.css'
+import './components/partials-components/Navigation.css'
 import './components/catalog/Catalog.css'
-import './components/Footer.css'
+import './components/partials-components/Footer.css'
 import './css/effects/buttons.css'
 import './css/effects/cube.css'
 import './css/errors/error.css'
@@ -34,12 +34,9 @@ import Error from "./components/partials-components/Error";
 
 function App() {
     const [catalog, setCatalog] = useState([])
-    const [users, setUsers] = useState({})
-
-
+    const [user, setUser] = useState({})
 
     const redirectTo = useNavigate()
-
 
     // get from server using projectService and requester
     useEffect(() => {
@@ -48,7 +45,6 @@ function App() {
                 setCatalog(projects)
             })
     }, [])
-
 
 
     const onCreateProjectSubmit = async (data) => {
@@ -75,14 +71,13 @@ function App() {
                         <Navigation/>
 
 
-                        <Notification />
-
+                        <Notification/>
                         <Routes>
                             <Route path="*" element={<Err404/>}/>
                             <Route path="/" element={<Catalog catalog={catalog}/>}/>
+
                             <Route path="/upload-project"
                                    element={<Create onCreateProjectSubmit={onCreateProjectSubmit}/>}/>
-
 
                             <Route path="/catalog" element={<Catalog catalog={catalog}/>}/>
 
