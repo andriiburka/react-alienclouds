@@ -2,78 +2,90 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useAuthContext} from '../../contexts/AuthContext'
 import {useNotificationContext, types} from '../../contexts/NotificationContext'
-import * as authService from '../../services/authService'
 import useForm from '../../hooks/useForm'
+import * as authService from '../../services/authService'
 import {Navbar} from "react-bootstrap";
 import Navigation from "../partials-components/Navigation";
 
-function LoginRegisterForm() {
+function LoginRegisterForm({
+                               loginSubmitHandler,
+                           }) {
+
+    // Hooks
     const [currentForm, setCurrentForm] = useState('Register')
-    const userList = ['george@abv.bg', 'john@abv.bg']
-
-    const toggleForm = (formName) => {
-        setCurrentForm(formName)
-    }
-
-    const onEmailChange = (e) => {
-        let email = e.target.value
-        const isUserInList = userList.includes(email) // BOOLEAN
-        isUserInList ? toggleForm('Login') : toggleForm('Register')
-    }
-
+    const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+        email: '',
+        password: '',
+    })
 
     const {login} = useAuthContext()
     const {addNotification} = useNotificationContext()
     const navigate = useNavigate()
 
+    // Fake users
+    const userList = ['george@abv.bg', 'john@abv.bg']
 
-    const registerSubmitHandler = (e) => {
-        e.preventDefault()
-        let formData = new FormData(e.currentTarget)
-        let {email, password} = Object.fromEntries(formData)
 
-        authService.register(email, password)
-            .then(authData => {
-                console.log(authData)
-                login(authData)
-                navigate('/catalog')
-            })
+    const toggleForm = (formName) => {
+        setCurrentForm(formName)
     }
 
-    const loginSubmitHandler = (e) => {
-        e.preventDefault()
-        let formData = new FormData(e.currentTarget)
-        let {email, password} = Object.fromEntries(formData)
 
-        authService.login(email, password)
-            .then(authData => {
-                login(authData)
-                addNotification('You logged in successfully', types.success)
-                navigate('/catalog')
-
-            })
-            .catch(err => {
-                alert(err)
-            })
+    const onEmailChange = (e) => {
+        let email = e.target.value
+        const isUserInList = userList.includes(email)
+        isUserInList ? toggleForm('Login') : toggleForm('Register')
     }
+
+
+    // const registerSubmitHandler = (e) => {
+    //     e.preventDefault()
+    //     let formData = new FormData(e.currentTarget)
+    //     let {email, password} = Object.fromEntries(formData)
+    //
+    //     authService.register(email, password)
+    //         .then(authData => {
+    //             console.log(authData)
+    //             login(authData)
+    //             navigate('/catalog')
+    //         })
+    // }
+
+    // const loginSubmitHandler = (e) => {
+    //     e.preventDefault()
+    //     let formData = new FormData(e.currentTarget)
+    //     let {email, password} = Object.fromEntries(formData)
+    //
+    //     authService.login(email, password)
+    //         .then(authData => {
+    //             login(authData)
+    //             addNotification('You logged in successfully', types.success)
+    //             navigate('/catalog')
+    //
+    //         })
+    //         .catch(err => {
+    //             alert(err)
+    //         })
+    // }
 
 
     return (
         <div className="login-container auth-box">
-            {currentForm === 'Register' ? <>{/*
+            {currentForm === 'Register' ? <>{
 
-/\\\\\\\\\       /\\\\\\\\\\\\\\\    /\\\\\\\\\\\\   /\\\\\\\\\\\     /\\\\\\\\\\\    /\\\\\\\\\\\\\\\  /\\\\\\\\\\\\\\\   /\\\\\\\\\
-/\\\///////\\\   \/\\\///////////   /\\\//////////   \/////\\\///    /\\\/////////\\\ \///////\\\/////  \/\\\///////////   /\\\///////\\\
-\/\\\     \/\\\   \/\\\             \/\\\                 \/\\\      \//\\\      \///        \/\\\       \/\\\             \/\\\     \/\\\
- \/\\\\\\\\\\\/    \/\\\\\\\\\\\     \/\\\    /\\\\\\\     \/\\\       \////\\\               \/\\\       \/\\\\\\\\\\\     \/\\\\\\\\\\\/
-  \/\\\//////\\\    \/\\\///////      \/\\\   \/////\\\     \/\\\          \////\\\            \/\\\       \/\\\///////      \/\\\//////\\\
-   \/\\\    \//\\\   \/\\\             \/\\\       \/\\\     \/\\\             \////\\\         \/\\\       \/\\\             \/\\\    \//\\\
-    \/\\\     \//\\\  \/\\\             \/\\\       \/\\\     \/\\\      /\\\      \//\\\        \/\\\       \/\\\             \/\\\     \//\\\
-     \/\\\      \//\\\ \/\\\\\\\\\\\\\\\ \//\\\\\\\\\\\\/   /\\\\\\\\\\\_\///\\\\\\\\\\\/         \/\\\       \/\\\\\\\\\\\\\\\ \/\\\      \//\\\
-      \///        \///  \///////////////   \////////////    \///////////   \///////////            \///        \///////////////  \///        \///*/}
+                    /*\\\\\\\\       /\\\\\\\\\\\\\\\    /\\\\\\\\\\\\   /\\\\\\\\\\\     /\\\\\\\\\\\    /\\\\\\\\\\\\\\\  /\\\\\\\\\\\\\\\   /\\\\\\\\\
+                    /\\\///////\\\   \/\\\///////////   /\\\//////////   \/////\\\///    /\\\/////////\\\ \///////\\\/////  \/\\\///////////   /\\\///////\\\
+                    \/\\\     \/\\\   \/\\\             \/\\\                 \/\\\      \//\\\      \///        \/\\\       \/\\\             \/\\\     \/\\\
+                     \/\\\\\\\\\\\/    \/\\\\\\\\\\\     \/\\\    /\\\\\\\     \/\\\       \////\\\               \/\\\       \/\\\\\\\\\\\     \/\\\\\\\\\\\/
+                      \/\\\//////\\\    \/\\\///////      \/\\\   \/////\\\     \/\\\          \////\\\            \/\\\       \/\\\///////      \/\\\//////\\\
+                       \/\\\    \//\\\   \/\\\             \/\\\       \/\\\     \/\\\             \////\\\         \/\\\       \/\\\             \/\\\    \//\\\
+                        \/\\\     \//\\\  \/\\\             \/\\\       \/\\\     \/\\\      /\\\      \//\\\        \/\\\       \/\\\             \/\\\     \//\\\
+                         \/\\\      \//\\\ \/\\\\\\\\\\\\\\\ \//\\\\\\\\\\\\/   /\\\\\\\\\\\ \///\\\\\\\\\\\/         \/\\\       \/\\\\\\\\\\\\\\\ \/\\\      \//\\\
+                          \///        \///  \///////////////   \////////////    \///////////   \///////////            \///        \///////////////  \///        \/*/}
 
                     <form method="POST"
-                          onSubmit={registerSubmitHandler}
+                        // onSubmit={registerSubmitHandler}
+                          onSubmit={onSubmit}
                     >
 
                         <h2 className="auth-title">
@@ -92,7 +104,7 @@ function LoginRegisterForm() {
                             required="required"
                             type="text"
                             autoComplete="email"
-                            onChange={onEmailChange}
+                            // onChange={onEmailChange}
                         />
 
                         <input
@@ -120,20 +132,21 @@ function LoginRegisterForm() {
 
                 </>
                 :
-                <>{/*
+                <>{
 
-  /\\\                  /\\\\\           /\\\\\\\\\\\\  /\\\\\\\\\\\  /\\\\\     /\\\
-  \/\\\                 /\\\///\\\      /\\\//////////  \/////\\\///  \/\\\\\\   \/\\\
-   \/\\\               /\\\/  \///\\\   /\\\                 \/\\\     \/\\\/\\\  \/\\\
-    \/\\\              /\\\      \//\\\ \/\\\    /\\\\\\\     \/\\\     \/\\\//\\\ \/\\\
-     \/\\\             \/\\\       \/\\\ \/\\\   \/////\\\     \/\\\     \/\\\\//\\\\/\\\
-      \/\\\             \//\\\      /\\\  \/\\\       \/\\\     \/\\\     \/\\\ \//\\\/\\\
-       \/\\\              \///\\\  /\\\    \/\\\       \/\\\     \/\\\     \/\\\  \//\\\\\\
-        \/\\\\\\\\\\\\\\\    \///\\\\\/     \//\\\\\\\\\\\\/   /\\\\\\\\\\\ \/\\\   \//\\\\\
-         \///////////////       \/////        \////////////    \///////////  \///     \/////      */}
+                    /*\\                  /\\\\\           /\\\\\\\\\\\\  /\\\\\\\\\\\  /\\\\\     /\\\
+                    \/\\\                 /\\\///\\\      /\\\//////////  \/////\\\///  \/\\\\\\   \/\\\
+                     \/\\\               /\\\/  \///\\\   /\\\                 \/\\\     \/\\\/\\\  \/\\\
+                      \/\\\              /\\\      \//\\\ \/\\\    /\\\\\\\     \/\\\     \/\\\//\\\ \/\\\
+                       \/\\\             \/\\\       \/\\\ \/\\\   \/////\\\     \/\\\     \/\\\\//\\\\/\\\
+                        \/\\\             \//\\\      /\\\  \/\\\       \/\\\     \/\\\     \/\\\ \//\\\/\\\
+                         \/\\\              \///\\\  /\\\    \/\\\       \/\\\     \/\\\     \/\\\  \//\\\\\\
+                          \/\\\\\\\\\\\\\\\    \///\\\\\/     \//\\\\\\\\\\\\/   /\\\\\\\\\\\ \/\\\   \//\\\\\
+                           \///////////////       \/////        \////////////    \///////////  \///     \///*/}
 
                     <form method="POST"
-                          onSubmit={loginSubmitHandler}
+                        // onSubmit={loginSubmitHandler}
+                          onSubmit={onSubmit}
                     >
                         <h2 className="login-title">
                             {currentForm === 'Login'
@@ -151,7 +164,11 @@ function LoginRegisterForm() {
                             defaultValue="@abv.bg"
                             required="required"
                             autoComplete="email"
-                            onBlur={onEmailChange}
+                            // onBlur={onEmailChange}
+                            onChange={onChange}
+                            value={values.email}
+
+
                         />
 
 
@@ -161,6 +178,9 @@ function LoginRegisterForm() {
                             name="password"
                             placeholder="password"
                             required="required"
+                            onChange={onChange}
+                            value={values.password}
+
                         />
                         <button className="btn btn-primary btn-block btn-large">Continue</button>
 

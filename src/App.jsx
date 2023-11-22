@@ -33,10 +33,15 @@ import Error from "./components/partials-components/Error";
 
 
 function App() {
+    const redirectTo = useNavigate()
     const [catalog, setCatalog] = useState([])
     const [user, setUser] = useState({})
+    const [auth, setAuth] = useState({})
 
-    const redirectTo = useNavigate()
+    const loginSubmitHandler = (values) => {
+        console.log(values)
+    }
+
 
     // get from server using projectService and requester
     useEffect(() => {
@@ -82,7 +87,7 @@ function App() {
                             <Route path="/catalog" element={<Catalog catalog={catalog}/>}/>
 
                             <Route path="/catalog/:projectId" element={<ProjectDetails/>}/>
-                            <Route path="/auth" element={<Login/>}/>
+                            <Route path="/auth" element={<Login loginSubmitHandler={loginSubmitHandler}/>}/>
                         </Routes>
 
                         <Footer/>
