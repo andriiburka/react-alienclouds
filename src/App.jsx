@@ -2,11 +2,7 @@ import * as projectService from "./services/projectAPI"
 import {Route, Routes, useNavigate} from "react-router-dom"
 import React, {useEffect, useState} from "react"
 
-import {AuthProvider} from './contexts/AuthContext'
-import {NotificationProvider} from './contexts/NotificationContext'
 
-import Notification from './components/partials-components/Notification/Notification'
-import ErrorBoundary from './components/partials-components/ErrorBoundary'
 import Err404 from "./components/partials-components/Err404"
 import Navigation from "./components/partials-components/Navigation"
 import Footer from "./components/partials-components/Footer"
@@ -17,7 +13,6 @@ import ProjectDetails from "./components/catalog/project-shown-in-catalog/projec
 
 
 import Auth from "./components/auth/Auth"
-import Logout from "./components/auth/Logout"
 import './components/auth/Auth.css'
 
 import './css/effects/infinite-glow.css'
@@ -32,7 +27,6 @@ import './css/style.css'
 import './css/effects/glowing-button.css'
 import './css/effects/background.css'
 import './index.css'
-
 
 
 function App() {
@@ -67,41 +61,37 @@ function App() {
 
 
     return (
-        <ErrorBoundary>
-            <AuthProvider>
-                <NotificationProvider>
-                    <div className="App">
-                        <div
-                            style={{display: 'none'}}
-                        >
-                            <div id='stars'></div>
-                            <div id='stars2'></div>
-                            <div id='stars3'></div>
-                        </div>
-
-                        <Navigation/>
 
 
-                        <Notification/>
-                        <Routes>
-                            <Route path="*" element={<Err404/>}/>
-                            <Route path="/" element={<Homepage />}/>
+        <div className="App">
+            <div
+                style={{display: 'none'}}
+            >
+                <div id='stars'></div>
+                <div id='stars2'></div>
+                <div id='stars3'></div>
+            </div>
 
-                            <Route path="/add-project" element={<Create onCreateProjectSubmit={onCreateProjectSubmit}/>}/>
-                            <Route path="/" element={<Catalog catalog={catalog}/>}/>
-                            <Route path="/catalog" element={<Catalog catalog={catalog}/>}/>
+            <Navigation/>
+            <Notification/>
 
-                            <Route path="/catalog/:projectId" element={<ProjectDetails/>}/>
+            <Routes>
+                <Route path="*" element={<Err404/>}/>
+                <Route path="/" element={<Homepage/>}/>
 
-                            <Route path="/auth" element={<Auth loginSubmitHandler={loginSubmitHandler}/>}/>
-                            <Route path="/logout" element={<Logout logoutHandler={logoutHandler}/>}/>
-                        </Routes>
+                <Route path="/add-project" element={<Create onCreateProjectSubmit={onCreateProjectSubmit}/>}/>
+                <Route path="/" element={<Catalog catalog={catalog}/>}/>
+                <Route path="/catalog" element={<Catalog catalog={catalog}/>}/>
 
-                        <Footer/>
-                    </div>
-                </NotificationProvider>
-            </AuthProvider>
-        </ErrorBoundary>
+                <Route path="/catalog/:projectId" element={<ProjectDetails/>}/>
+
+                <Route path="/auth" element={<Auth/>}/>
+                {/*<Route path="/logout" element={<Logout logoutHandler={logoutHandler}/>}/>*/}
+            </Routes>
+
+            <Footer/>
+        </div>
+
     )
 }
 

@@ -1,11 +1,5 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-import {useAuthContext} from '../../contexts/AuthContext'
-import {useNotificationContext, types} from '../../contexts/NotificationContext'
-import useForm from '../../hooks/useForm'
-import * as authService from '../../services/authService'
-import {Navbar} from "react-bootstrap";
-import Navigation from "../partials-components/Navigation";
 
 
 const LoginFormKeys = {
@@ -13,17 +7,8 @@ const LoginFormKeys = {
     PASSWORD: 'password',
 }
 
-function LoginRegisterForm({loginSubmitHandler,}) {
-
-    // Hooks
+function LoginRegisterForm() {
     const [currentForm, setCurrentForm] = useState('Register')
-    const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
-        [LoginFormKeys.EMAIL]: '',
-        [LoginFormKeys.PASSWORD]: '',
-    })
-
-    const {login} = useAuthContext()
-    const {addNotification} = useNotificationContext()
     const navigate = useNavigate()
 
     // Fake users
@@ -170,8 +155,8 @@ function LoginRegisterForm({loginSubmitHandler,}) {
                             required="required"
                             autoComplete="email"
                             // onBlur={onEmailChange}
-                            onChange={onChange}
-                            value={values[LoginFormKeys.EMAIL]}
+                            // onChange={onChange}
+                            // value={values[LoginFormKeys.EMAIL]}
 
 
                         />
@@ -183,8 +168,8 @@ function LoginRegisterForm({loginSubmitHandler,}) {
                             name={LoginFormKeys.PASSWORD}
                             placeholder="password"
                             required="required"
-                            onChange={onChange}
-                            value={values[LoginFormKeys.PASSWORD]}
+                            // onChange={onChange}
+                            // value={values[LoginFormKeys.PASSWORD]}
 
                         />
                         <button className="btn btn-primary btn-block btn-large">Continue</button>
