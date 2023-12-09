@@ -1,87 +1,109 @@
 import {NavLink} from "react-router-dom"
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 
-import noImage from '../../images/noImage.png'
+import noImage from '../../images/no-image.png'
 import './AddProject.css'
 
 
-function CreateProject({onCreateProjectSubmit}) {
 
+function CreateProject({onAddProjectSubmit}) {
 
     const [projectData, setProjectData] = useState(
         {
             "title": "Raspberry Pi 4",
-            // "imageUrl": noImage ,
-            "imageUrl": "https://www.okdo.com/wp-content/uploads/2019/06/Board_02.png",
+            "imageUrl": 'https://www.okdo.com/wp-content/uploads/2019/06/Board_01.png',
             "description": "Raspberry Pi developed in the United Kingdom by the Raspberry Pi Foundation",
             "_id": "814d2b29-7af7-449a-8e1c-80e0912d249d"
         }
     )
+    const [imageSrc, setImageSrc] = useState(noImage)
 
-    const onChangeHandler = (e) => {
-        setProjectData(oldState => ({
-            ...oldState,
-            [e.target.name]: e.target.value
+    useEffect(() => {
+        const checkImageValidity = () => {
+            const img = new Image()
+            img.onload = () => setImageSrc(projectData.imageUrl)
+            img.onerror = () => setImageSrc(noImage)
+            img.src = projectData.imageUrl
+        };
+
+        if (projectData.imageUrl.length > 0) {
+            checkImageValidity()
+        }
+    }, [projectData.imageUrl])
+
+    const handleInputChange = (e) => {
+        const {name, value} = e.target
+        setProjectData((prevData) => ({
+            ...prevData,
+            [name]: value,
         }))
     }
 
     const onSubmit = (e) => {
         e.preventDefault()
-        onCreateProjectSubmit(projectData)
+        onAddProjectSubmit(projectData)
     }
-
     const uploadClicked = (e) => {
         e.preventDefault()
-        onCreateProjectSubmit(projectData)
+        onAddProjectSubmit(projectData)
     }
+
 
     return (
         <div className="add-and-details-flexbox">
-            <div className="flex-box2">
+
+            <div className="add-flex-box-image">
                 <div className="glow project-add-image-preview">
-                    <img src={projectData.imageUrl ? projectData.imageUrl : noImage} alt=""/>
-                    <div className="catalog-button-container">
-                        <div className="glow-purple-button">
-                            <NavLink onClick={uploadClicked} className="btn" to="">Add</NavLink>
-                        </div>
-                    </div>
+                    <img src={projectData.imageUrl}/>
                 </div>
             </div>
 
 
-            <div className="flex-box1">
-                <form onSubmit={onSubmit} className="upload-project-form no-copy">
-                    <input
-                        id="title"
-                        onChange={onChangeHandler}
-                        defaultValue={projectData.title}
-                        type="text"
-                        name="title"
-                        placeholder="Title"/>
-                    <br/>
-                    <br/>
+            <div className="add-flex-box-text"  style={{
+                overflow: 'hidden'
+            }}>
+                    <form onSubmit={onSubmit} className="add-project-form no-copy">
 
-                    <input
-                        onChange={onChangeHandler}
-                        defaultValue={projectData.imageUrl}
-                        type="text"
-                        id="imageUrl"
-                        name="imageUrl"
-                        placeholder="Image URL"/>
-                    <br/>
-                    <br/>
+                        <input
+                            id="title"
+                            onChange={handleInputChange}
+                            defaultValue={projectData.title}
+                            type="text"
+                            name="title"
+                            placeholder="Title"/>
 
-                    <div className="create-project-textarea-container">
+                        <input
+                            onChange={handleInputChange}
+                            defaultValue={projectData.imageUrl}
+                            type="text"
+                            id="imageUrl"
+                            name="imageUrl"
+                            placeholder="Image URL"/>
+
+
+                        <div className="create-project-textarea-container">
                             <textarea
                                 id="description"
                                 className="text-area"
-                                onChange={onChangeHandler}
+                                onChange={handleInputChange}
                                 defaultValue={projectData.description}
                                 name="description"
                                 placeholder="Description"
                             />
-                    </div>
-                </form>
+                        </div>
+
+                        <div className="catalog-button-container glow-purple-button">
+                                <NavLink className="btn" to="">*IMG</NavLink>
+                                <NavLink className="btn" to="">*PDF</NavLink>
+                                <NavLink onClick={uploadClicked} className="btn" to="">Apply</NavLink>
+                        </div>
+
+                    </form>
+
+
+
+
+
             </div>
         </div>
     )

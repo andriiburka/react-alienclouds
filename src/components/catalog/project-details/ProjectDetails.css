@@ -1,0 +1,34 @@
+.project-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top: 110px;
+}
+
+/*  PROJECT DETAILS - TEXT  */
+.details-flex-box-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width:45%;
+    background: rgba(88, 84, 100, 0.13);
+
+}
+
+/*  PROJECT DETAILS - IMAGE  */
+.details-flex-box-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 45%;
+    overflow: hidden;
+}
+
+.details-flex-box-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

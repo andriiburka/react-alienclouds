@@ -19,9 +19,6 @@
     width: 104%;
     height: 104%;
     border-radius: 6px;
-    /*background-image: linear-gradient(*/
-    /*        var(--rotate)*/
-    /*        , rgba(123, 15, 255, 0), rgba(118, 0, 255, 0.12) 43%, rgba(0, 255, 179, 0.5));*/
     background-image: linear-gradient(
             var(--rotate), rgba(123, 15, 255, 0), rgba(118, 0, 255, 0.12) 43%, rgb(76, 31, 98));
     position: absolute;
@@ -43,11 +40,7 @@
     margin: 0 auto;
     transform: scale(0.8);
     filter: blur(calc(var(--card-height) / 6));
-    /*background-image: linear-gradient(*/
-    /*        var(--rotate)*/
-    /*        , #5ddcff, #3c67e3 43%, #4e00c2);*/
     background-image: linear-gradient(var(--rotate), #4c1f62, rgba(73, 0, 255, 0.43) 43%);
-
     opacity: 1;
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;

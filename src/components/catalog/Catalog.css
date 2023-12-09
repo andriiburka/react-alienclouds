@@ -13,8 +13,7 @@
 /*}*/
 
 
-
-/*  PROJECT DETAILS  */
+/*  PROJECTS IN THE CATALOG  */
 .projects-area {
     /*border: whitesmoke 1px solid;*/
     padding: 40px 0 100px 0;
@@ -33,14 +32,15 @@
     box-sizing: border-box;
     background-color: rgba(3, 208, 244, 0.04);
     position: relative;
+    /*min-height: 600px;*/
+    /*max-height: 600px;*/
     width: 400px;
-    height: 600px;
+    height: 530px;
     /*flex-basis: calc(25% - 0px);*/
     border-radius: 4px;
     padding: 0 0 20px;
     animation: textColor 10s ease infinite;
-    border: 1px rgba(226, 43, 168, .5) solid;
-    /*border: 1px rgba(208, 0, 255, .4) solid;*/
+    border: 1px rgba(226, 43, 168, 0.1) solid;
 }
 
 .product-details-image img {
@@ -59,8 +59,8 @@
 }
 
 
-.project h1{
-    color: white;
+.project h1 {
+    color: whitesmoke;
     white-space: nowrap;
     overflow: hidden; /* Скрива излишния текст */
     /*max-width: 400px;*/
@@ -72,6 +72,9 @@
 }
 
 .project img {
+
+    /*border: #0fdd00 2px solid;*/
+
     border-radius: 2px;
     max-width: 100%;
     max-height: 100%;
@@ -85,15 +88,23 @@
 }
 
 .project-description {
+    background: rgba(3, 13, 19, 0.23);
+    letter-spacing: 1px;
+    font-size: .8em;
+
     color: white;
-    /*vertical-align: bottom;*/
+
     display: block;
-    padding: 10px 20px 50px 20px;
+
+    margin: 0 0 0 0;
+    padding: 10px 50px 10px 50px;
     /*border-top: rgba(0, 0, 0, .1) 5px solid;*/
-    overflow: hidden;  /* auto - to be able to scroll */
-    max-height: 150px;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    overflow: auto; /* auto - to be able to scroll */
+
+    min-height: 109px;
+    max-height: 109px;
+
+    /*display: -webkit-flex;*/
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -121,8 +132,6 @@
     background-size: 200% 200%;
     animation: animateGlow 10s ease infinite;
 }
-
-
 
 
 @keyframes animateGlow {

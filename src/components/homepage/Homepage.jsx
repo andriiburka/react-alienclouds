@@ -1,18 +1,13 @@
 import React from "react"
-import Err404 from "../partials-components/Err404";
 
-
-export default function Homepage() {
-
-
+import Catalog from "../catalog/Catalog";
+function Homepage({catalog}) {
     return (
-        <div>
-
-                <Err404/>
-
-
-        </div>
-
+        <>
+            <Catalog {...catalog}/>
+        </>
     )
 }
 
+
+export default Homepage

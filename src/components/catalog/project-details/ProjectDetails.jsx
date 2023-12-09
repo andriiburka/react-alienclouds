@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {Link, NavLink, useParams} from "react-router-dom";
 
-import * as projectService from '../../../../services/projectAPI'
+import * as projectService from '../../../services/projectAPI'
+import './ProjectDetails.css'
 
 
 function ProjectDetails() {
@@ -17,22 +18,33 @@ function ProjectDetails() {
 
 
     return (
-            <div className="add-and-details-flexbox">
-                <div className="flex-box2">
+        <div>
+
+            <div className="project-details">
+
+                <div className="details-flex-box-image">
                     <div className="glow project-add-image-preview">
                         <img src={project.imageUrl} alt=""/>
-                                <div className="catalog-button-container glow-purple-button">
-                                    <Link className="btn" to={``}>Edit</Link>
-                                    <Link className="btn" to={``}>Delete</Link>
-                                </div>
                     </div>
                 </div>
 
-                <div className="flex-box1" style={{background: "rgba(200,200,300, .1)", textAlign: "center"}}>
+                <div className="details-flex-box-text">
+
                     <h1>{project.title}</h1>
-                    <p style={{textAlign: "justify", padding: "0 20px 20px 20px",}}>Description: {project.description}</p>
+                    <p>Description: {project.description}</p>
+
+
+                    <div className="catalog-button-container glow-purple-button">
+                            <NavLink className="btn" to="">*Edit</NavLink>
+                            <NavLink className="btn" to="">*Delete</NavLink>
+                            <NavLink className="btn" to="">*Buy</NavLink>
+                    </div>
+
                 </div>
+
             </div>
+
+        </div>
     )
 }
 
