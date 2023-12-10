@@ -26,8 +26,8 @@
 
     color: #ffffff;
     font-size: .8rem;
-    text-transform: uppercase;
-    width: 100px;
+    /*text-transform: uppercase;*/
+    /*width: 100px;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
     text-decoration: none;
     overflow: hidden;
     transition: .5s;
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
 }
 
 

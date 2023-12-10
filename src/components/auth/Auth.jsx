@@ -1,16 +1,14 @@
+import './Auth.css'
+
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-import {createUserWithEmailAndPassword} from 'firebase/auth'
-import './Auth.css'
+
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword,} from 'firebase/auth'
 import {auth} from "../../firebase-config";
 
 
+
 function AuthForm() {
-    // const [userList, setUserList] = useState([
-    //     'george@abv.bg',
-    //     'john@abv.bg',
-    //     'admin@abv.bg',
-    // ])
 
     const [currentForm, setCurrentForm] = useState('Login')
 
@@ -33,7 +31,7 @@ function AuthForm() {
 //=============================== TOGGLE FORM END ===============================================
 
 
-    const registerSubmitHandler = async (e) => {
+    const register = async (e) => {
         e.preventDefault()
         try {
             const user = await createUserWithEmailAndPassword(
@@ -47,15 +45,18 @@ function AuthForm() {
 
     }
 
-    const loginSubmitHandler = async () => {
-
+    const login = async (e) => {
+        e.preventDefault()
+        try {
+            const user = await signInWithEmailAndPassword(
+                auth,
+                loginEmail,
+                loginPassword
+            )
+        } catch (error) {
+            console.log(error.message)
+        }
     }
-
-
-    const logout = async () => {
-
-    }
-
 
     return (
         <>
@@ -72,10 +73,7 @@ function AuthForm() {
      \/\\\      \//\\\ \/\\\\\\\\\\\\\\\ \//\\\\\\\\\\\\/   /\\\\\\\\\\\_\///\\\\\\\\\\\/         \/\\\       \/\\\\\\\\\\\\\\\ \/\\\      \//\\\
       \///        \///  \///////////////   \////////////    \///////////   \///////////            \///        \///////////////  \///        \///*/}
 
-                        <form
-                            method="POST"
-                            onSubmit={registerSubmitHandler}
-                        >
+                        <form method="POST">
 
                             <h2 className="auth-title">
                                 {currentForm === 'Login' ?
@@ -105,7 +103,9 @@ function AuthForm() {
                             />
 
 
-                            <button type="submit" className="btn btn-primary btn-block btn-large">
+                            <button
+                                onClick={register}
+                                className="btn btn-primary btn-block btn-large">
                                 Submit
                             </button>
 
@@ -126,9 +126,7 @@ function AuthForm() {
         \/\\\\\\\\\\\\\\\    \///\\\\\/     \//\\\\\\\\\\\\/   /\\\\\\\\\\\ \/\\\   \//\\\\\
          \///////////////       \/////        \////////////    \///////////  \///     \/////      */}
 
-                        <form method="POST"
-                              onSubmit={loginSubmitHandler}
-                        >
+                        <form method="POST">
                             <h2 className="login-title">
                                 {currentForm === 'Login' ?
                                     <a className="login-3d change-text-to-register"
@@ -163,12 +161,11 @@ function AuthForm() {
                                 placeholder="password"
                             />
 
-                            <button className="btn btn-primary btn-block btn-large"
-                            onClick={registerSubmitHandler}
-                            >
+                            <button
+                                onClick={login}
+                                className="btn btn-primary btn-block btn-large">
                                 Submit
                             </button>
-
                         </form>
 
 
