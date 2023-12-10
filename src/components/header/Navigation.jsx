@@ -44,7 +44,7 @@ function Navigation() {
                         <NavLink to="/catalog">Projects</NavLink>
                     </div>
                     <div className="glow-purple-button">
-                        {isLogged ? <NavLink to="/auth">Auth</NavLink> :
+                        {isLogged ? <NavLink to="/auth">Login</NavLink> :
                             <NavLink to="/profile">Profile</NavLink>}
                     </div>
                 </div>

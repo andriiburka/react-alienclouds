@@ -6,7 +6,12 @@ import './Auth.css'
 
 function LoginRegisterForm() {
     const [currentForm, setCurrentForm] = useState('Register')
-    const userList = ['george@abv.bg', 'john@abv.bg']
+    const [userList, setUserList] = useState([
+        'george@abv.bg',
+        'john@abv.bg',
+        'admin@abv.bg',
+    ])
+
 
     const toggleForm = (formName) => {
         setCurrentForm(formName)
@@ -14,7 +19,7 @@ function LoginRegisterForm() {
 
     const onEmailChange = (e) => {
         let email = e.target.value
-        const isUserInList = userList.includes(email) // BOOLEAN
+        const isUserInList = userList.includes(email)
         isUserInList ? toggleForm('Login') : toggleForm('Register')
     }
 
