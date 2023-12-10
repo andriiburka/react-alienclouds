@@ -6,7 +6,7 @@ import './AddProject.css'
 
 
 
-function CreateProject({onAddProjectSubmit}) {
+function AddProject({onAddProjectSubmit}) {
 
     const [projectData, setProjectData] = useState(
         {
@@ -109,4 +109,4 @@ function CreateProject({onAddProjectSubmit}) {
     )
 }
 
-export default CreateProject
+export default AddProject

@@ -1,59 +1,59 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-import * as authService from '../../services/authService'
+import {createUserWithEmailAndPassword} from 'firebase/auth'
 import './Auth.css'
+import {auth} from "../../firebase-config";
 
 
-function LoginRegisterForm() {
-    const [currentForm, setCurrentForm] = useState('Register')
-    const [userList, setUserList] = useState([
-        'george@abv.bg',
-        'john@abv.bg',
-        'admin@abv.bg',
-    ])
+function AuthForm() {
+    // const [userList, setUserList] = useState([
+    //     'george@abv.bg',
+    //     'john@abv.bg',
+    //     'admin@abv.bg',
+    // ])
+
+    const [currentForm, setCurrentForm] = useState('Login')
+
+    const [registerEmail, setRegisterEmail] = useState('')
+    const [registerPassword, setRegisterPassword] = useState('')
+
+    const [loginEmail, setLoginEmail] = useState('')
+    const [loginPassword, setLoginPassword] = useState('')
 
 
+//=============================== TOGGLE FORM ===============================================
     const toggleForm = (formName) => {
         setCurrentForm(formName)
     }
-
     const onEmailChange = (e) => {
         let email = e.target.value
-        const isUserInList = userList.includes(email)
-        isUserInList ? toggleForm('Login') : toggleForm('Register')
+        // const isUserInList = userList.includes(email)
+        // isUserInList ? toggleForm('Login') : toggleForm('Register')
+    }
+//=============================== TOGGLE FORM END ===============================================
+
+
+    const registerSubmitHandler = async (e) => {
+        e.preventDefault()
+        try {
+            const user = await createUserWithEmailAndPassword(
+                auth,
+                registerEmail,
+                registerPassword
+            )
+        } catch (error) {
+            console.log(error.message)
+        }
+
+    }
+
+    const loginSubmitHandler = async () => {
+
     }
 
 
+    const logout = async () => {
 
-    const navigate = useNavigate()
-
-
-    const registerSubmitHandler = (e) => {
-        e.preventDefault()
-        let formData = new FormData(e.currentTarget)
-        let {email, password} = Object.fromEntries(formData)
-
-        authService.register(email, password)
-            .then(authData => {
-                console.log(authData)
-                // login(authData)
-                navigate('/catalog')
-            })
-    }
-
-    const loginSubmitHandler = (e) => {
-        e.preventDefault()
-        let formData = new FormData(e.currentTarget)
-        let {email, password} = Object.fromEntries(formData)
-
-        authService.login(email, password)
-            .then(authData => {
-                navigate('/catalog')
-
-            })
-            .catch(err => {
-                alert(err)
-            })
     }
 
 
@@ -87,25 +87,27 @@ function LoginRegisterForm() {
                             </h2>
 
                             <input
-                                id="email"
-                                name="email"
-                                defaultValue="@abv.bg"
-                                required="required"
+                                name="register-email"
+                                onChange={(event) => {
+                                    setRegisterEmail(event.target.value)
+                                }}
+                                placeholder="email"
                                 type="text"
-                                autoComplete="email"
-                                onChange={onEmailChange}
                             />
 
                             <input
-                                name="password"
+                                name="register-password"
+                                onChange={(event) => {
+                                    setRegisterPassword(event.target.value)
+                                }}
                                 placeholder="password"
-                                required="required"
                                 type="password"
-
                             />
 
 
-                            <button type="submit" className="btn btn-primary btn-block btn-large">Continue</button>
+                            <button type="submit" className="btn btn-primary btn-block btn-large">
+                                Submit
+                            </button>
 
                         </form>
 
@@ -140,25 +142,32 @@ function LoginRegisterForm() {
                                 }</h2>
 
                             <input
-                                id="email"
-                                type="text"
-                                name="email"
-                                // placeholder="e-mail"
-                                defaultValue="@abv.bg"
-                                required="required"
-                                autoComplete="email"
+                                name="login-email"
+                                onChange={(event) => {
+                                    setLoginEmail(event.target.value)
+                                }}
                                 onBlur={onEmailChange}
+
+                                type="text"
+                                placeholder="email"
+
                             />
 
 
                             <input
+                                name="login-password"
+                                onChange={(event) => {
+                                    setLoginPassword(event.target.value)
+                                }}
                                 type="password"
-                                id="login-password-input"
-                                name="password"
                                 placeholder="password"
-                                required="required"
                             />
-                            <button className="btn btn-primary btn-block btn-large">Continue</button>
+
+                            <button className="btn btn-primary btn-block btn-large"
+                            onClick={registerSubmitHandler}
+                            >
+                                Submit
+                            </button>
 
                         </form>
 
@@ -171,4 +180,4 @@ function LoginRegisterForm() {
     )
 }
 
-export default LoginRegisterForm
+export default AuthForm

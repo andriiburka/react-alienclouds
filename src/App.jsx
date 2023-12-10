@@ -2,11 +2,12 @@ import {Route, RouterProvider, Routes, useNavigate} from "react-router-dom"
 import * as projectService from "./services/projectAPI"
 import React, {useEffect, useState} from "react"
 
+
 import ProjectDetails from "./components/catalog/project-details/ProjectDetails"
 import Navigation from "./components/header/Navigation"
-import Login from "./components/auth/Auth"
-import Catalog from "./components/catalog/Catalog"
-import Create from "./components/add/AddProject"
+import AuthForm from "./components/auth/Auth"
+// import Catalog from "./components/catalog/Catalog"
+import Add from "./components/add/AddProject"
 import Footer from "./components/footer/Footer"
 import Err404 from "./components/error/Err404"
 
@@ -44,7 +45,6 @@ function App() {
         redirectTo('/catalog')
     }
 
-
     return (
         <div className="App">
             <div style={{
@@ -60,11 +60,11 @@ function App() {
 
             <Routes>
                 <Route path="*" element={<Err404/>}/>
-                <Route path="/" element={<Catalog catalog={catalog}/>}/>
-                <Route path="/upload-project" element={<Create onAddProjectSubmit={onAddProjectSubmit}/>}/>
-                <Route path="/catalog" element={<Catalog catalog={catalog}/>}/>
-                <Route path="/catalog/:projectId" element={<ProjectDetails/>}/>
-                <Route path="/auth" element={<Login/>}/>
+                {/*<Route path="/" element={<Catalog catalog={catalog}/>}/>*/}
+                <Route path="/upload-project" element={<Add onAddProjectSubmit={onAddProjectSubmit}/>}/>
+                {/*<Route path="/catalog" element={<Catalog catalog={catalog}/>}/>*/}
+                {/*<Route path="/catalog/:projectId" element={<ProjectDetails/>}/>*/}
+                <Route path="/auth" element={<AuthForm/>}/>
             </Routes>
 
             <Footer/>
