@@ -15,8 +15,7 @@
 
 /*  PROJECTS IN THE CATALOG  */
 .projects-area {
-    /*border: whitesmoke 1px solid;*/
-    padding: 40px 0 100px 0;
+    padding: 20px 0 50px 0;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
